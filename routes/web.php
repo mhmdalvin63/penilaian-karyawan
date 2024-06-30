@@ -14,7 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () { return view('frontend.beranda'); });
-Route::get('/departement', function () { return view('frontend.departement'); });
+Route::get('/beranda', function () { return view('frontend.beranda1'); })->name('beranda');
+Route::get('/departement', function () { return view('frontend.departement'); })->name('departement');
 Route::get('/login', function () { return view('frontend.login'); });
 Route::get('/register', function () { return view('frontend.register'); });
 Route::get('/', function () { return view('frontend.beranda'); });

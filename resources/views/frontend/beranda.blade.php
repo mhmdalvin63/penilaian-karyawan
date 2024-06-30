@@ -4,6 +4,8 @@
 <link rel="stylesheet" href="{{asset('../frontEnd/css/global.css')}}"> 
     
 @section('contentFe')
+
+    
     
     <div id="beranda" class="bg-blue">
         <div class="container">

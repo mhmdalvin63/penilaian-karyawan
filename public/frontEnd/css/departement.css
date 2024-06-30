@@ -1,0 +1,12 @@
+#departement{
+    padding-top: 7rem;
+    height: max-content;
+    min-height: 100vh;
+}
+
+.btn-import{
+    padding: .5rem 2rem;
+    border-radius: 10px;
+    text-decoration: none;
+    color: black;
+}
