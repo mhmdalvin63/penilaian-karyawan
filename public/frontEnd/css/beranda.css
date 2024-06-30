@@ -1,0 +1,18 @@
+#beranda{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.btn-beranda{
+    text-decoration: none;
+    color: white;
+    padding: .5rem 3rem;
+    border-radius: 10px;
+}
+
+.kalender{
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
