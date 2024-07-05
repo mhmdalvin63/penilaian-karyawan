@@ -18,7 +18,7 @@
         <div class="container">
             <div class="row justify-content-between align-items-center">
                 <div class="col-6 text-white">
-                    <h1 class="fw-bold">HI, WISNU ARYO!</h1>
+                    <h1 class="fw-bold">HI, {{Auth::user()->name}}!</h1>
                     <h4 class="my-2">Ini adalah halamanmu sekarang</h4>
                 </div>
                 <div class="col-4 d-flex justify-content-start">
@@ -35,19 +35,24 @@
                     <div class="border-tabel"">
                         <div class="d-flex align-items-center gap-3">
                             <p class="fw-bold">Nama :</p>
-                            <p>Wisnu Aryo</p>
+                            <p>{{Auth::user()->name}}</p>
                         </div>
                         <div class="d-flex align-items-center gap-3">
                             <p class="fw-bold">Departement :</p>
-                            <p>Lorem ipsum dolor sit.</p>
+                            <p>{{Auth::user()->departemen->departemen}}</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-7 my-2">
                     <div class="border-tabel"">
                         <div class="d-flex align-items-center gap-3">
-                            <p class="fw-bold">Total :</p>
-                            <p>40</p>
+                            <p class="fw-bold">Skor : 
+                                @if ($penilaian != null)
+                                    {{$penilaian->nilai_akhir}}
+                                @else
+                                belum ada nilai
+                                @endif
+                            </p>
                         </div>
                         <hr>
                         <div class="d-flex align-items-center gap-3 my-2">

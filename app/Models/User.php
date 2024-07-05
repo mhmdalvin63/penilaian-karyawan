@@ -21,6 +21,10 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role',
+        'nik',
+        'jabatan_id',
+        'departemen_id',
     ];
 
     /**
@@ -42,4 +46,17 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function penilaian()
+    {
+        return $this->hasOne(Penilaian::class);
+    }
+    public function jabatan()
+    {
+        return $this->belongsTo(Jabatan::class);
+    }
+    public function departemen()
+    {
+        return $this->belongsTo(Departemen::class);
+    }
 }

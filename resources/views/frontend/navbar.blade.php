@@ -20,10 +20,15 @@
       </ul>
       <div class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Hi, Wisnu Aryo!
+          Hi, {{Auth::user()->name}}
         </a>
         <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Logout</a></li>
+          <form method="POST" action="{{ route('logout') }}">
+            @csrf
+            <button type="submit" class="dropdown-item has-icon text-danger" style="cursor: pointer">
+                <i class="fas fa-sign-out-alt mt-2"></i> <span style="font-size: 14px">Logout</span>
+            </button>
+        </form>
         </ul>
       </div>
     </div>

@@ -1,0 +1,44 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::table('penilaians', function (Blueprint $table) {
+            $table->dropColumn('kedisiplinan');
+            $table->dropColumn('prestasi_kerja');
+            $table->dropColumn('kemampuan_kerja');
+            $table->dropColumn('sikap_kerja');
+            $table->Integer('kehadiran');
+            $table->Integer('quality');
+            $table->Integer('speed');
+            $table->Integer('achievement');
+            $table->Integer('planning');
+            $table->Integer('flexibility');
+            $table->Integer('inovasion');
+            $table->Integer('jobskill');
+            $table->Integer('coopertative');
+            $table->Integer('responsibility');
+            $table->Integer('attitude');
+            $table->Integer('execution');
+            $table->Integer('moral_behavior');
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::table('penilaians', function (Blueprint $table) {
+            //
+        });
+    }
+};

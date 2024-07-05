@@ -13,8 +13,13 @@
                 <div class="col-6 text-white">
                     <h1 class="fw-bold">YUK LIHAT NILAI KAMU !</h1>
                     <div class="d-flex align-items-center gap-3">
-                        <a class="btn-beranda btn-login bg-green" href="#" role="button">Login</a>
-                        <a class="btn-beranda btn-register bg-yellow" href="#" role="button">Register</a>
+                        @if (Auth::user() == null)
+                            
+                        <a class="btn-beranda btn-login bg-green" href="/login" role="button">Login</a>
+                        <a class="btn-beranda btn-register bg-yellow" href="/register" role="button">Register</a>
+                        @else
+                        <a class="btn-beranda btn-login bg-green" href="/beranda" role="button">Lihat</a>
+                        @endif
                     </div>
                 </div>
                 <div class="col-4 d-flex justify-content-start">
@@ -23,5 +28,9 @@
             </div>
         </div>
     </div>
-
+@if (session('success'))
+    <script>
+        alert('{{session('success')}}')
+    </script>
+@endif
 @endsection
