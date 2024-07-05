@@ -49,7 +49,7 @@ class User extends Authenticatable
 
     public function penilaian()
     {
-        return $this->hasOne(Penilaian::class);
+        return $this->hasMany(Penilaian::class);
     }
     public function jabatan()
     {

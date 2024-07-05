@@ -42,6 +42,7 @@
                                     <option value="2" {{$data->kehadiran == 2 ? 'selected' : ''}}>2</option>
                                     <option value="3" {{$data->kehadiran == 3 ? 'selected' : ''}}>3</option>
                                     <option value="4" {{$data->kehadiran == 4 ? 'selected' : ''}}>4</option>
+                                    <option value="5" {{$data->kehadiran == 5 ? 'selected' : ''}}>5</option>
                                 </select>
                             </div>
         
@@ -56,6 +57,7 @@
                                     <option value="2" {{$data->quality == 2 ? 'selected' : ''}}>2</option>
                                     <option value="3" {{$data->quality == 3 ? 'selected' : ''}}>3</option>
                                     <option value="4" {{$data->quality == 4 ? 'selected' : ''}}>4</option>
+                                    <option value="5" {{$data->quality == 5 ? 'selected' : ''}}>5</option>
                                         </select>
                                     </div>
                                 </div>
@@ -68,6 +70,7 @@
                                             <option value="2" {{$data->workload == 2 ? 'selected' : ''}}>2</option>
                                             <option value="3" {{$data->workload == 3 ? 'selected' : ''}}>3</option>
                                             <option value="4" {{$data->workload == 4 ? 'selected' : ''}}>4</option>
+                                            <option value="5" {{$data->workload == 5 ? 'selected' : ''}}>5</option>
                                         </select>
                                     </div>
                                 </div>
@@ -80,6 +83,7 @@
                                             <option value="2" {{$data->speed == 2 ? 'selected' : ''}}>2</option>
                                             <option value="3" {{$data->speed == 3 ? 'selected' : ''}}>3</option>
                                             <option value="4" {{$data->speed == 4 ? 'selected' : ''}}>4</option>
+                                            <option value="5" {{$data->speed == 5 ? 'selected' : ''}}>5</option>
                                         </select>
                                     </div>
                                 </div>
@@ -92,6 +96,7 @@
                                             <option value="2" {{$data->achievement == 2 ? 'selected' : ''}}>2</option>
                                             <option value="3" {{$data->achievement == 3 ? 'selected' : ''}}>3</option>
                                             <option value="4" {{$data->achievement == 4 ? 'selected' : ''}}>4</option>
+                                            <option value="5" {{$data->achievement == 5 ? 'selected' : ''}}>5</option>
                                         </select>
                                     </div>
                                 </div>
@@ -107,6 +112,7 @@
                                             <option value="2" {{$data->planning == 2 ? 'selected' : ''}}>2</option>
                                             <option value="3" {{$data->planning == 3 ? 'selected' : ''}}>3</option>
                                             <option value="4" {{$data->planning == 4 ? 'selected' : ''}}>4</option>
+                                            <option value="5" {{$data->planning == 5 ? 'selected' : ''}}>5</option>
                                         </select>
                                     </div>
                                 </div>
@@ -118,6 +124,7 @@
                                             <option value="2" {{$data->flexibility == 2 ? 'selected' : ''}}>2</option>
                                             <option value="3" {{$data->flexibility == 3 ? 'selected' : ''}}>3</option>
                                             <option value="4" {{$data->flexibility == 4 ? 'selected' : ''}}>4</option>
+                                            <option value="5" {{$data->flexibility == 5 ? 'selected' : ''}}>5</option>
                                         </select>
                                     </div>
                                 </div>
@@ -129,6 +136,7 @@
                                             <option value="2" {{$data->inovasion == 2 ? 'selected' : ''}}>2</option>
                                             <option value="3" {{$data->inovasion == 3 ? 'selected' : ''}}>3</option>
                                             <option value="4" {{$data->inovasion == 4 ? 'selected' : ''}}>4</option>
+                                            <option value="5" {{$data->inovasion == 5 ? 'selected' : ''}}>5</option>
                                         </select>
                                     </div>
                                 </div>
@@ -140,6 +148,7 @@
                                     <option value="2" {{$data->jobskill == 2 ? 'selected' : ''}}>2</option>
                                     <option value="3" {{$data->jobskill == 3 ? 'selected' : ''}}>3</option>
                                     <option value="4" {{$data->jobskill == 4 ? 'selected' : ''}}>4</option>
+                                    <option value="5" {{$data->jobskill == 5 ? 'selected' : ''}}>5</option>
                                         </select>
                                     </div>
                                 </div>
@@ -151,6 +160,7 @@
                                             <option value="2" {{$data->potency == 2 ? 'selected' : ''}}>2</option>
                                             <option value="3" {{$data->potency == 3 ? 'selected' : ''}}>3</option>
                                             <option value="4" {{$data->potency == 4 ? 'selected' : ''}}>4</option>
+                                            <option value="5" {{$data->potency == 5 ? 'selected' : ''}}>5</option>
                                         </select>
                                     </div>
                                 </div>
@@ -162,6 +172,7 @@
                                             <option value="2" {{$data->comprehensive_thingking == 2 ? 'selected' : ''}}>2</option>
                                             <option value="3" {{$data->comprehensive_thingking == 3 ? 'selected' : ''}}>3</option>
                                             <option value="4" {{$data->comprehensive_thingking == 4 ? 'selected' : ''}}>4</option>
+                                            <option value="5" {{$data->comprehensive_thingking == 5 ? 'selected' : ''}}>5</option>
                                         </select>
                                     </div>
                                 </div>
@@ -179,6 +190,7 @@
                                     <option value="2" {{$data->coopertative == 2 ? 'selected' : ''}}>2</option>
                                     <option value="3" {{$data->coopertative == 3 ? 'selected' : ''}}>3</option>
                                     <option value="4" {{$data->coopertative == 4 ? 'selected' : ''}}>4</option>
+                                    <option value="5" {{$data->coopertative == 5 ? 'selected' : ''}}>5</option>
                                         </select>
                                     </div>
                                 </div>
@@ -191,6 +203,7 @@
                                     <option value="2" {{$data->responsibility == 2 ? 'selected' : ''}}>2</option>
                                     <option value="3" {{$data->responsibility == 3 ? 'selected' : ''}}>3</option>
                                     <option value="4" {{$data->responsibility == 4 ? 'selected' : ''}}>4</option>
+                                    <option value="5" {{$data->responsibility == 5 ? 'selected' : ''}}>5</option>
                                         </select>
                                     </div>
                                 </div>
@@ -202,6 +215,7 @@
                                     <option value="2" {{$data->attitude == 2 ? 'selected' : ''}}>2</option>
                                     <option value="3" {{$data->attitude == 3 ? 'selected' : ''}}>3</option>
                                     <option value="4" {{$data->attitude == 4 ? 'selected' : ''}}>4</option>
+                                    <option value="5" {{$data->attitude == 5 ? 'selected' : ''}}>5</option>
                                         </select>
                                     </div>
                                 </div>
@@ -213,6 +227,7 @@
                                             <option value="2" {{$data->execution == 2 ? 'selected' : ''}}>2</option>
                                             <option value="3" {{$data->execution == 3 ? 'selected' : ''}}>3</option>
                                             <option value="4" {{$data->execution == 4 ? 'selected' : ''}}>4</option>
+                                            <option value="5" {{$data->execution == 5 ? 'selected' : ''}}>5</option>
                                         </select>
                                     </div>
                                 </div>
@@ -225,6 +240,7 @@
                                             <option value="2" {{$data->moral_behavior == 2 ? 'selected' : ''}}>2</option>
                                             <option value="3" {{$data->moral_behavior == 3 ? 'selected' : ''}}>3</option>
                                             <option value="4" {{$data->moral_behavior == 4 ? 'selected' : ''}}>4</option>
+                                            <option value="5" {{$data->moral_behavior == 5 ? 'selected' : ''}}>5</option>
                                         </select>
                                     </div>
                                 </div>

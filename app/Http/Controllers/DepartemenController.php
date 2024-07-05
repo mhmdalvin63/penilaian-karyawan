@@ -44,36 +44,31 @@ class DepartemenController extends Controller
     }
 
     public function dep(){
-        $user = Auth::user();
-        if ($user != null) {
-            if ($user->role == 'admin' || $user->role == 'hrd') {
-                Auth::logout();
-            }
-        }
-        $data = User::where('id',Auth::user()->id)->first();
+        $data = Penilaian::with('user')->where('user_id',Auth::user()->id)->get();
         return view('frontend.departement',compact('data'));
     }
 
     public function download(Request $request){
-        $data = Penilaian::where('user_id',Auth::user()->id)->with('user.departemen')->first();
+        $data = Penilaian::where('user_id',Auth::user()->id)->with('user.departemen')->get();
         // dd($data->user);
         if ($data == null) {
             return back()->with(['error'=>'Anda belum mempunyai nilai.']);
         }
-
         $filename = "laporan_penilaian_".date('Y-m-d').".xls";		 
       header("Content-Type: application/vnd.ms-excel");
       header("Content-Disposition: attachment; filename=\"$filename\"");
 
-            if ($data->nilai_akhir > 4.1) {
-                $data->status_nilai = 'Sempurna';
-            } elseif ($data->nilai_akhir > 3.1) {
-                $data->status_nilai = 'Baik';
-            } elseif ($data->nilai_akhir > 2.1) {
-                $data->status_nilai = 'Cukup';
+        foreach ($data as $key) {
+            if ($key->nilai_akhir > 4.1) {
+                $key->status_nilai = 'Sempurna';
+            } elseif ($key->nilai_akhir > 3.1) {
+                $key->status_nilai = 'Baik';
+            } elseif ($key->nilai_akhir > 2.1) {
+                $key->status_nilai = 'Cukup';
             } else {
-                $data->status_nilai = 'Kurang';
+                $key->status_nilai = 'Kurang';
             }
+        }
 
         $current_year = date('Y');
         $bulan = date('m');
@@ -129,32 +124,35 @@ class DepartemenController extends Controller
     ';
         $dataHtml .= '</tr>';
             if(!empty($data))
+            $no = 1;
 
+            foreach($data as $key => $item) {
                 $dataHtml .= "<tr>
-                    <td align=center>1</td>
-                    <td align=center>".$data->user->name."</td>
-                    <td align=center>".$data->user->nik."</td>
-                    <td align=center>".$data->user->jabatan->jabatan."</td>
-                    <td align=center>".$data->user->departemen->departemen."</td>
-                    <td align=center>".$data->quality."</td>
-                    <td align=center>".$data->workload."</td>
-                    <td align=center>".$data->speed."</td>
-                    <td align=center>".$data->achievement."</td>
-                    <td align=center>".$data->kehadiran."</td>
-                    <td align=center>".$data->planning."</td>
-                    <td align=center>".$data->flexibility."</td>
-                    <td align=center>".$data->inovasion."</td>
-                    <td align=center>".$data->jobskill."</td>
-                    <td align=center>".$data->potency."</td>
-                    <td align=center>".$data->comprehensive_thingking."</td>
-                    <td align=center>".$data->coopertative."</td>
-                    <td align=center>".$data->responsibility."</td>
-                    <td align=center>".$data->attitude."</td>
-                    <td align=center>".$data->execution."</td>
-                    <td align=center>".$data->moral_behavior."</td>
-                    <td align=center>".$data->nilai_akhir."</td>
-                    <td align=center>".$data->status_nilai."</td>";
+                    <td align=center>".$no++."</td>
+                    <td align=center>".$item->user->name."</td>
+                    <td align=center>".$item->user->nik."</td>
+                    <td align=center>".$item->user->jabatan->jabatan."</td>
+                    <td align=center>".$item->user->departemen->departemen."</td>
+                    <td align=center>".$item->quality."</td>
+                    <td align=center>".$item->workload."</td>
+                    <td align=center>".$item->speed."</td>
+                    <td align=center>".$item->achievement."</td>
+                    <td align=center>".$item->kehadiran."</td>
+                    <td align=center>".$item->planning."</td>
+                    <td align=center>".$item->flexibility."</td>
+                    <td align=center>".$item->inovasion."</td>
+                    <td align=center>".$item->jobskill."</td>
+                    <td align=center>".$item->potency."</td>
+                    <td align=center>".$item->comprehensive_thingking."</td>
+                    <td align=center>".$item->coopertative."</td>
+                    <td align=center>".$item->responsibility."</td>
+                    <td align=center>".$item->attitude."</td>
+                    <td align=center>".$item->execution."</td>
+                    <td align=center>".$item->moral_behavior."</td>
+                    <td align=center>".$item->nilai_akhir."</td>
+                    <td align=center>".$item->status_nilai."</td>";
                 $dataHtml .= "</tr>";
+            }
         $dataHtml .= '</table>';
         
         echo $dataHtml;

@@ -32,44 +32,47 @@
                       <tr class="text-center">
                         <th scope="col">No</th>
                         <th scope="col">Nama</th>
-                        <th scope="col">Nik</th>
-                        <th scope="col">Email</th>
+                        <th scope="col">From Date</th>
+                        <th scope="col">To Date</th>
                         <th scope="col">Skor</th>
                         <th scope="col">Grade</th>
                       </tr>
                     </thead>
                     <tbody>
+                      
+                      @if ($data != null)
+                      <?php
+                      $no =1;
+                      ?>
+                      @foreach ($data as $item)
                       <tr class="text-center">
-                        <th scope="row">1</th>
-                        <td>{{$data->name}}</td>
-                        <td>{{$data->nik}}</td>
-                        <td>{{$data->email}}</td>
+                            
+                        <th scope="row">{{$no++}}</th>
+                            
+                        <td>{{$item->user->name}}</td>
+                        <td>{{$item->from_date}}</td>
+                        <td>{{$item->to_date}}</td>
                         <td>
-                          @if ($data->penilaian != null)
-                              
-                          {{$data->penilaian->nilai_akhir}}
-                          @else
-                          belum ada nilai
-                          @endif
+                          {{$item->nilai_akhir}}
                         </td>
                         <td>
-                          @if ($data->penilaian != null)
                               
-                          @if ($data->penilaian->nilai_akhir > 4.1)
+                          @if ($item->nilai_akhir > 4.1)
                           <span class="btn btn-outline-success">Sempurna</span>
-                          @elseif(($data->nilai_akhir > 3.1))
+                          @elseif(($item->nilai_akhir > 3.1))
                           <span class="btn btn-outline-primary">Baik</span>
-                          @elseif(($data->nilai_akhir > 2.1))
+                          @elseif(($item->nilai_akhir > 2.1))
                           <span class="btn btn-outline-warning">Kurang</span>
                           @else
                           <span class="btn btn-outline-danger">Buruk</span>
                           
                           @endif
-                          @else
-                              belum ada grade
-                          @endif
                         </td>
                       </tr>
+                        @endforeach
+
+                        @endif
+
                     </tbody>
                   </table>
             </div>
