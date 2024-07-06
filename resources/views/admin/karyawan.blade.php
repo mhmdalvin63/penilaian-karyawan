@@ -6,9 +6,12 @@
             <div class="card">
                 <div class="card-header">
                     <h4 class="w-100">List Karyawan</h4>
-                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#kategoriprodukmodal">
-                        <span class="text">+ Tambah</span>
-                    </button>
+                    @if (Auth::user()->role == 'admin')
+                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#kategoriprodukmodal">
+                            <span class="text">+ Tambah</span>
+                        </button>
+                    @endif
+                    
                 </div>
                 <div class="card-body">
                     @if (session('success'))

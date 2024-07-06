@@ -6,9 +6,11 @@
             <div class="card">
                 <div class="card-header">
                     <h4 class="w-100">List Penilaian Karyawan</h4>
-                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#kategoriprodukmodal">
-                        <span class="text">+ Tambah</span>
-                    </button>
+                    @if (Auth::user()->role == 'admin')
+                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#kategoriprodukmodal">
+                            <span class="text">+ Tambah</span>
+                        </button>
+                    @endif
                 </div>
                 <div class="card-body">
                     @if (session('success'))
@@ -38,7 +40,7 @@
                                     <?php
                                     $no = 1;
                                     ?>
-                                    @foreach ($data as $item)
+                                    @foreach ($data->sortByDesc('nilai_akhir') as $item)
                                     <tr>
                                         <th scope="row">{{$no++}}</th>
                                         <td>{{$item->user->name}}</td>
@@ -50,13 +52,13 @@
                                         <td>
 
                                             @if ($item->nilai_akhir > 4.1)
-                                            <span class="btn btn-outline-success">Sempurna</span>
+                                            <span class="btn btn-success">Sempurna</span>
                                             @elseif(($item->nilai_akhir > 3.1))
-                                            <span class="btn btn-outline-primary">Baik</span>
+                                            <span class="btn btn-primary">Baik</span>
                                             @elseif(($item->nilai_akhir > 2.1))
-                                            <span class="btn btn-outline-warning">Kurang</span>
+                                            <span class="btn btn-warning">Kurang</span>
                                             @else
-                                            <span class="btn btn-outline-danger">Buruk</span>
+                                            <span class="btn btn-danger">Buruk</span>
                                             
                                             @endif
                                         </td>

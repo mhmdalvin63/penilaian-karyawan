@@ -42,39 +42,39 @@
                     <tbody>
                       
                       @if ($data != null)
-    <?php
-    $no = 1;
-    ?>
-    @foreach ($data->sortByDesc('nilai_akhir') as $item)
-    <tr class="text-center">
-        <th scope="row">{{$no++}}</th>
-        <td>{{$item->user->name}}</td>
-        <td>
-            @if ($item->departemen != null)
-                {{$item->departemen->departemen}}
-            @else
-                -
-            @endif
-        </td>
-        <td>{{$item->from_date}}</td>
-        <td>{{$item->to_date}}</td>
-        <td>
-            {{$item->nilai_akhir}}
-        </td>
-        <td>
-            @if ($item->nilai_akhir > 4.1)
-            <span class="btn btn-success">Sempurna</span>
-            @elseif ($item->nilai_akhir > 3.1)
-            <span class="btn btn-primary">Baik</span>
-            @elseif ($item->nilai_akhir > 2.1)
-            <span class="btn btn-warning">Kurang</span>
-            @else
-            <span class="btn btn-danger">Buruk</span>
-            @endif
-        </td>
-    </tr>
-    @endforeach
-@endif
+                            <?php
+                            $no = 1;
+                            ?>
+                            @foreach ($data->sortByDesc('nilai_akhir') as $item)
+                            <tr class="text-center">
+                                <th scope="row">{{$no++}}</th>
+                                <td>{{$item->user->name}}</td>
+                                <td>
+                                    @if ($item->departemen != null)
+                                        {{$item->departemen->departemen}}
+                                    @else
+                                        -
+                                    @endif
+                                </td>
+                                <td>{{$item->from_date}}</td>
+                                <td>{{$item->to_date}}</td>
+                                <td>
+                                    {{$item->nilai_akhir}}
+                                </td>
+                                <td>
+                                    @if ($item->nilai_akhir > 4.1)
+                                    <span class="btn btn-success">Sempurna</span>
+                                    @elseif ($item->nilai_akhir > 3.1)
+                                    <span class="btn btn-primary">Baik</span>
+                                    @elseif ($item->nilai_akhir > 2.1)
+                                    <span class="btn btn-warning">Kurang</span>
+                                    @else
+                                    <span class="btn btn-danger">Buruk</span>
+                                    @endif
+                                </td>
+                            </tr>
+                            @endforeach
+                        @endif
 
 
                     </tbody>

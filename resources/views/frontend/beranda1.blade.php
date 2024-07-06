@@ -45,7 +45,7 @@
                 </div>
                 <div class="col-7 my-2">
                     <div class="border-tabel"">
-                        <div class="d-flex align-items-center gap-3">
+                        <div class="d-flex align-items-center justify-content-between gap-3">
                             <p class="fw-bold">Skor : 
                                 @if ($penilaian != null)
                                     {{$penilaian->nilai_akhir}}
@@ -53,6 +53,15 @@
                                     belum ada nilai
                                 @endif
                             </p>
+                            @if ($penilaian->nilai_akhir > 4.1)
+                                    <span class="btn btn-success">Sempurna</span>
+                                    @elseif ($penilaian->nilai_akhir > 3.1)
+                                    <span class="btn btn-primary">Baik</span>
+                                    @elseif ($penilaian->nilai_akhir > 2.1)
+                                    <span class="btn btn-warning">Kurang</span>
+                                    @else
+                                    <span class="btn btn-danger">Buruk</span>
+                                    @endif
                         </div>
                         <hr>
                         <div class="d-flex align-items-center gap-3 my-2">

@@ -10,7 +10,7 @@
             <div class="row justify-content-center">
                 <div class="col-7">
                     <div class="btn-login bg-blue2 my-5 mx-auto">
-                        <h2 class="fw-bolder lt-5">REGISTER</h2>
+                        <h2 class="fw-bolder lt-5">REGISTERED</h2>
                     </div>
                     @if (session('error'))
                         
@@ -39,7 +39,7 @@
                         </div>
                         <div class="mb-3">
                           <label for="exampleInputPassword1" class="form-label lt-5 text-white ps-3">Jabatan</label>
-                          <select name="jabatan_id" id="" class="form-control" required>
+                          <select name="jabatan_id" id="" class="form-control form-log-reg" required>
                             @foreach ($jabatan as $item)
                                 <option value="{{$item->id}}">{{$item->jabatan}}</option>
                             @endforeach
@@ -47,7 +47,7 @@
                         </div>
                         <div class="mb-3">
                           <label for="exampleInputPassword1" class="form-label lt-5 text-white ps-3">Departement</label>
-                          <select name="departemen_id" id="" class="form-control" required>
+                          <select name="departemen_id" id="" class="form-control form-log-reg" required>
                             @foreach ($data as $item)
                                 <option value="{{$item->id}}">{{$item->departemen}}</option>
                             @endforeach
