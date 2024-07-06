@@ -22,8 +22,8 @@
                         @endif
                     </div>
                 </div>
-                <div class="col-4 d-flex justify-content-start">
-                    <img class="kalender" src="{{asset('../frontEnd/images/kalender.png')}}" alt="">
+                <div class="col-4 d-flex justify-content-center">
+                    <img class="kalender" src="{{asset('../frontEnd/images/logo-pt.png')}}" alt="">
                 </div>
             </div>
         </div>
