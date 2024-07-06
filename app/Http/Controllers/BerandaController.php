@@ -18,7 +18,12 @@ class BerandaController extends Controller
         return view('frontend.beranda');
     }
     public function beranda(){
-        $penilaian = Penilaian::where('user_id',Auth::user()->id)->first();
+        $user = Auth::user();
+        if ($user->role == 'admin' || $user->role == 'hrd') {
+            Auth::logout();
+            return redirect('/');
+        }
+        $penilaian = Penilaian::where('user_id',$user->id)->first();
         return view('frontend.beranda1',compact('penilaian'));
     }
 }

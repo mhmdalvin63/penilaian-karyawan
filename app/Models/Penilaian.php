@@ -15,4 +15,8 @@ class Penilaian extends Model
     {
         return $this->belongsTo(User::class);
     }
+    public function departemen()
+    {
+        return $this->belongsTo(Departemen::class);
+    }
 }

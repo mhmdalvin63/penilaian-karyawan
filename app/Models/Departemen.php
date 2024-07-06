@@ -13,4 +13,8 @@ class Departemen extends Model
     {
         return $this->hasMany(User::class);
     }
+    public function penilaian()
+    {
+        return $this->hasMany(Penilaian::class);
+    }
 }

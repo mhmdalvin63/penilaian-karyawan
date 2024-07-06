@@ -44,7 +44,12 @@ class DepartemenController extends Controller
     }
 
     public function dep(){
-        $data = Penilaian::with('user')->where('user_id',Auth::user()->id)->get();
+        $user = Auth::user();
+        if ($user->role == 'admin' || $user->role == 'hrd') {
+            Auth::logout();
+            return redirect('/');
+        }
+        $data = Penilaian::with('user')->where('departemen_id',$user->departemen_id)->get();
         return view('frontend.departement',compact('data'));
     }
 

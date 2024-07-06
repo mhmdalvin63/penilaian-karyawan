@@ -31,11 +31,12 @@ class PenilaianController extends Controller
         
         $total = $prestasi_kerja + $kehadiran + $sikap_kerja + $kemampuan_kerja;
         // dd($total);
-        
+        $getUser = User::find($request->user_id);
         
         // dd($nilai_akhir);
         Penilaian::create([
             'user_id'=>$request->user_id,
+            'departemen_id'=>$getUser->departemen_id,
             'from_date'=>$request->from_date,
             'to_date'=>$request->to_date,
             'quality'=>$request->quality,
@@ -80,9 +81,10 @@ class PenilaianController extends Controller
         $sikap_kerja = $itung_sikap_kerja * 0.20;
         
         $total = $prestasi_kerja + $kehadiran + $sikap_kerja + $kemampuan_kerja;
-
+        $getUser = User::find($request->user_id);
         $data->update([
             'user_id'=>$request->user_id,
+            'departemen_id'=>$getUser->departemen_id,
             'from_date'=>$request->from_date,
             'to_date'=>$request->to_date,
             'quality'=>$request->quality,

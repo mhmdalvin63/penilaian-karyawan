@@ -32,6 +32,7 @@
                       <tr class="text-center">
                         <th scope="col">No</th>
                         <th scope="col">Nama</th>
+                        <th scope="col">Departemen</th>
                         <th scope="col">From Date</th>
                         <th scope="col">To Date</th>
                         <th scope="col">Skor</th>
@@ -50,6 +51,15 @@
                         <th scope="row">{{$no++}}</th>
                             
                         <td>{{$item->user->name}}</td>
+                        <td>
+                          @if ($item->departemen != null)
+                              
+                          {{$item->departemen->departemen}}
+                          @else
+                              -
+                          @endif
+
+                        </td>
                         <td>{{$item->from_date}}</td>
                         <td>{{$item->to_date}}</td>
                         <td>

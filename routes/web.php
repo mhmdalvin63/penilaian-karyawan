@@ -26,12 +26,15 @@ Route::get('/', function () {
 });
 
 Route::get('/', [BerandaController::class,'index']);
-Route::get('/beranda', [BerandaController::class,'beranda'])->name('beranda');
-Route::get('/departement', [DepartemenController::class,'dep'])->name('departement');
-Route::get('/export', [DepartemenController::class,'download']);
 Route::get('/login', function () { return view('frontend.login'); });
 Route::get('/register', function () { return view('frontend.register'); });
 
+Route::middleware(['auth'])->group(function () {
+    Route::get('/beranda', [BerandaController::class,'beranda'])->name('beranda');
+    Route::get('/departement', [DepartemenController::class,'dep'])->name('departement');
+    Route::get('/export', [DepartemenController::class,'download']);
+
+});
 
 Route::get('/admin/login', [AdminController::class,'login']);
 Route::post('/admin/submit-login', [AdminController::class,'submit_login']);
