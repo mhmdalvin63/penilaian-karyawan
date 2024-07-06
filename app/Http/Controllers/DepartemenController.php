@@ -54,7 +54,7 @@ class DepartemenController extends Controller
     }
 
     public function download(Request $request){
-        $data = Penilaian::where('user_id',Auth::user()->id)->with('user.departemen')->get();
+        $data = Penilaian::where('departemen_id',Auth::user()->departemen_id)->with('user.departemen')->get();
         // dd($data->user);
         if ($data == null) {
             return back()->with(['error'=>'Anda belum mempunyai nilai.']);
@@ -136,8 +136,8 @@ class DepartemenController extends Controller
                     <td align=center>".$no++."</td>
                     <td align=center>".$item->user->name."</td>
                     <td align=center>".$item->user->nik."</td>
-                    <td align=center>".$item->user->jabatan->jabatan."</td>
-                    <td align=center>".$item->user->departemen->departemen."</td>
+                    <td align=center>".($item->user->jabatan == null ? '-' : $item->user->jabatan->jabatan)."</td>
+                    <td align=center>".($item->user->departemen == null ? '-' : $item->user->departemen->departemen)."</td>
                     <td align=center>".$item->quality."</td>
                     <td align=center>".$item->workload."</td>
                     <td align=center>".$item->speed."</td>
