@@ -11,10 +11,10 @@ use App\Http\Requests\Auth\LoginRequest;
 class AdminController extends Controller
 {
     public function login(){
-        $user = Auth::user();
-        if ($user != null) {
-            return back();
-        }
+        // $user = Auth::user();
+        // if ($user != null) {
+        //     return back();
+        // }
         return view('admin/login');
     }
 
