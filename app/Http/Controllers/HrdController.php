@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Departemen;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -14,10 +15,12 @@ class HrdController extends Controller
             return back();
         }
         $data = User::where('role','hrd')->get();
-        return view('admin.hrd',compact('data'));
+        $departemen = Departemen::all();
+        return view('admin.hrd',compact('data','departemen'));
     }
     public function submit(Request $request){
          User::create([
+            'departemen_id'=>$request->departemen_id,
             'name'=>$request->name,
             'email'=>$request->email,
             'role'=>'hrd',

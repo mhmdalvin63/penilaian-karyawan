@@ -7,12 +7,20 @@ use App\Models\Jabatan;
 use App\Models\Penilaian;
 use App\Models\Departemen;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class KaryawanController extends Controller
 {
     public function index(){
-        $data = User::with('jabatan','departemen')->where('role','karyawan')->get();
+        $user = Auth::user();
+        if ($user->role == 'admin') {
+            $data = User::with('jabatan','departemen')->where('role','karyawan')->get();
+        } else {
+            $data = User::with('jabatan','departemen')->where('role','karyawan')->where('departemen_id',$user->departemen_id)->get();
+            # code...
+        }
+        
         $jabatan = Jabatan::all();
         $departemen = Departemen::all();
         return view('admin.karyawan',compact('data','jabatan','departemen'));

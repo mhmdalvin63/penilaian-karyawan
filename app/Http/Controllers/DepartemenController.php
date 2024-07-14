@@ -15,6 +15,7 @@ class DepartemenController extends Controller
             return back();
         }
         $data = Departemen::all();
+        
         return view('admin.departemen',compact('data'));
     }
     public function submit(Request $request){

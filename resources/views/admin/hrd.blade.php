@@ -5,7 +5,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="w-100">List HRD</h4>
+                    <h4 class="w-100">List Kepala Bagian</h4>
                     <button type="button" class="btn btn-success" data-toggle="modal" data-target="#kategoriprodukmodal">
                         <span class="text">+ Tambah</span>
                     </button>
@@ -26,6 +26,7 @@
                                     <tr>
                                         <th>No</th>
                                         <th>Nama</th>
+                                        <th>Departemen</th>
                                         <th>Email</th>
                                         <th>Opsi</th>
                                     </tr>
@@ -38,12 +39,13 @@
                                     <tr>
                                         <th scope="row">{{$no++}}</th>
                                         <td>{{$item->name}}</td>
+                                        <td>{{$item->departemen->departemen}}</td>
                                         <td>{{$item->email}}</td>
                                         <td>
                                             <form action="/admin/delete-hrd/{{$item->id}}" method="POST" onsubmit="return confirm('Apakah anda yakin akan menghapus data ini?');">
                                                 @csrf
                                                 @method('delete')
-                                                <span><a class="btn btn-primary" href="/admin/edit-hrd/{{$item->id}}"><i class="far fa-edit"></i>Edit</a></span>
+                                                {{-- <span><a class="btn btn-primary" href="/admin/edit-hrd/{{$item->id}}"><i class="far fa-edit"></i>Edit</a></span> --}}
                                                 <button class="btn btn-danger" type="submit"><i class="far fa-trash-alt"></i> Hapus</button>
                                             </form>
                                         </td>
@@ -64,7 +66,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="kategoriProdukLabel">Form Input Type</h5>
+                <h5 class="modal-title" id="kategoriProdukLabel">Form Input Kepala Bagian</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -72,6 +74,14 @@
             <form action="/admin/submit-hrd" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="modal-body">
+                    <div class="form-group">
+                        <label>Departemen <span style="color: red">*</span></label>
+                        <select name="departemen_id" class="form-control" required>
+                            @foreach ($departemen as $item)
+                                <option value="{{$item->id}}">{{$item->departemen}}</option>
+                            @endforeach
+                        </select>
+                    </div>
                     <div class="form-group">
                         <label>Name <span style="color: red">*</span></label>
                         <input type="text" class="form-control" name="name" required>
