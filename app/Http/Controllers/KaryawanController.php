@@ -18,7 +18,7 @@ class KaryawanController extends Controller
             $data = User::with('jabatan','departemen')->where('role','karyawan')->get();
         } else {
             $data = User::with('jabatan','departemen')->where('role','karyawan')->where('departemen_id',$user->departemen_id)->get();
-            # code...
+            
         }
         
         $jabatan = Jabatan::all();
