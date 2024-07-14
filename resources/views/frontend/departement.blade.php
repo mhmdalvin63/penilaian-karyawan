@@ -9,7 +9,7 @@
 
     <div id="departement" class="bg-blue">
         <div class="container">
-            <h4 class="text-white text-center my-3">Departement LOREM IPSUM</h4>
+            <h4 class="text-white text-center my-3">Departement {{Auth::user()->departemen->departemen}}</h4>
             <div class="border-tabel"">
                 <div class="d-flex justify-content-between align-items-center mx-5 mb-5 mt-3">
                     <p>List Data Nilai Karyawan</p>
@@ -42,46 +42,40 @@
                     <tbody>
                       
                       @if ($data != null)
-                      <?php
-                      $no =1;
-                      ?>
-                      @foreach ($data as $item)
-                      <tr class="text-center">
-                            
-                        <th scope="row">{{$no++}}</th>
-                            
-                        <td>{{$item->user->name}}</td>
-                        <td>
-                          @if ($item->departemen != null)
-                              
-                          {{$item->departemen->departemen}}
-                          @else
-                              -
-                          @endif
-
-                        </td>
-                        <td>{{$item->from_date}}</td>
-                        <td>{{$item->to_date}}</td>
-                        <td>
-                          {{$item->nilai_akhir}}
-                        </td>
-                        <td>
-                              
-                          @if ($item->nilai_akhir > 4.1)
-                          <span class="btn btn-outline-success">Sempurna</span>
-                          @elseif(($item->nilai_akhir > 3.1))
-                          <span class="btn btn-outline-primary">Baik</span>
-                          @elseif(($item->nilai_akhir > 2.1))
-                          <span class="btn btn-outline-warning">Kurang</span>
-                          @else
-                          <span class="btn btn-outline-danger">Buruk</span>
-                          
-                          @endif
-                        </td>
-                      </tr>
-                        @endforeach
-
+                            <?php
+                            $no = 1;
+                            ?>
+                            @foreach ($data->sortByDesc('nilai_akhir') as $item)
+                            <tr class="text-center">
+                                <th scope="row">{{$no++}}</th>
+                                <td>{{$item->user->name}}</td>
+                                <td>
+                                    @if ($item->departemen != null)
+                                        {{$item->departemen->departemen}}
+                                    @else
+                                        -
+                                    @endif
+                                </td>
+                                <td>{{$item->from_date}}</td>
+                                <td>{{$item->to_date}}</td>
+                                <td>
+                                    {{$item->nilai_akhir}}
+                                </td>
+                                <td>
+                                    @if ($item->nilai_akhir > 4.1)
+                                    <span class="btn btn-success">Sempurna</span>
+                                    @elseif ($item->nilai_akhir > 3.1)
+                                    <span class="btn btn-primary">Baik</span>
+                                    @elseif ($item->nilai_akhir > 2.1)
+                                    <span class="btn btn-warning">Kurang</span>
+                                    @else
+                                    <span class="btn btn-danger">Buruk</span>
+                                    @endif
+                                </td>
+                            </tr>
+                            @endforeach
                         @endif
+
 
                     </tbody>
                   </table>

@@ -1,8 +1,10 @@
 #login{
-    height: 100vh;
+    min-height: 100vh;
+    height: max-content;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 2rem 0;
 }
 
 
