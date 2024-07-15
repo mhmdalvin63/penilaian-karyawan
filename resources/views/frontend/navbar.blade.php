@@ -13,10 +13,6 @@
         <li class="nav-item">
             <a class="nav-link {{ Request::routeIs('beranda') ? 'nav-active' : '' }}" aria-current="page" href="{{ route('beranda') }}">Beranda</a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link {{ Request::routeIs('departement') ? 'nav-active' : '' }}" href="{{ route('departement') }}">Departement</a>
-        </li>
-        
       </ul>
       <div class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
