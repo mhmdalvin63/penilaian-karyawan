@@ -28,6 +28,7 @@ Route::get('/', function () {
 Route::get('/', [BerandaController::class,'index']);
 Route::get('/login', function () { return view('frontend.login'); });
 Route::get('/register', function () { return view('frontend.register'); });
+Route::get('/c', function () { return view('frontend.c'); });
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/beranda', [BerandaController::class,'beranda'])->name('beranda');
