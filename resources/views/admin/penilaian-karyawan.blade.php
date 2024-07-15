@@ -118,7 +118,7 @@
                     </div>
                     <label><strong>Kedisplinan</strong></label><br>
                     <div class="form-group">
-                        <label>Kehadiran <span style="color: red">*</span></label>
+                        <label>Kehadiran <small>(Presensi menunjukkan kepatuhan karyawan pada peraturan perusahaan mengenai waktu kerja.)</small><span style="color: red">*</span></label>
                         <select name="kehadiran" class="form-control" required>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -133,7 +133,7 @@
                         <div class="col-6">
                             
                             <div class="form-group">
-                                <label>Quality(Kualitas) <span style="color: red">*</span></label>
+                                <label>Kualitas <small>(Kemampuan untuk menyelesaikan suatu pekerjaan berdasarkan ketelitian, kerapihan dan kesesuaian hasil kerja.)</small><span style="color: red">*</span></label>
                                 <select name="quality" class="form-control" required>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -146,7 +146,7 @@
                         <div class="col-6">
 
                             <div class="form-group">
-                                <label>Workload(Beban Kerja) <span style="color: red">*</span></label>
+                                <label>Beban Kerja <small>(Kemampuan menyelesaikan pekerjaan telah ditentukan sesuai dengan tanggungjawab pekerjaannya.)</small><span style="color: red">*</span></label>
                                 <select name="workload" class="form-control" required>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -159,7 +159,7 @@
                         <div class="col-6">
                             
                             <div class="form-group">
-                                <label>Speed(Kecepatan) <span style="color: red">*</span></label>
+                                <label>Kecepatan <small>(Kemampuan menyelesaikan pekerjaan sesuai dengan waktu yang telah ditetapkan dengan cepat dan efisien.)</small><span style="color: red">*</span></label>
                                 <select name="speed" class="form-control" required>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -172,7 +172,7 @@
                         <div class="col-6">
 
                             <div class="form-group">
-                                <label>Achievement(Pencapaian) <span style="color: red">*</span></label>
+                                <label>Pencapaian <small>(Kemampuan melakukan pekerjaan dengan sebaik mungkin untuk melampaui standar keberhasilan kerjanya.)</small><span style="color: red">*</span></label>
                                 <select name="achievement" class="form-control" required>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -188,7 +188,7 @@
                         <div class="col-6">
                             
                             <div class="form-group">
-                                <label>Planning(Perencanaan) <span style="color: red">*</span></label>
+                                <label>Perencanaan <small>(Kemampuan untuk menyusun prioritas perencanaan dan mengkoordinasi pekerjaan)</small><span style="color: red">*</span></label>
                                 <select name="planning" class="form-control" required>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -200,7 +200,7 @@
                         </div>
                         <div class="col-6">
                             <div class="form-group">
-                                <label>Flexibility(Fleksibilitas) <span style="color: red">*</span></label>
+                                <label>Fleksibilitas <small>(Kemampuan untuk menyesuaikan diri dan bekerja dengan efektif pada berbagai situasi dan permasalahan.)</small><span style="color: red">*</span></label>
                                 <select name="flexibility" class="form-control" required>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -212,7 +212,7 @@
                         </div>
                         <div class="col-6">
                             <div class="form-group">
-                                <label>Innovation(Inovasi) <span style="color: red">*</span></label>
+                                <label>Inovasi <small>(Kemampuan untuk memunculkan ide baru yang dapat dipergunakan untuk mempermudah pekerjaan.)</small><span style="color: red">*</span></label>
                                 <select name="inovation" class="form-control" required>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -224,7 +224,7 @@
                         </div>
                         <div class="col-6">
                             <div class="form-group">
-                                <label>Job Skill(Keahlian Kerja) <span style="color: red">*</span></label>
+                                <label>Keahlian Kerja <small>(Memiliki pengetahuan yang mendalam tentang pekerjaan dan mengetahui bagaimana cara kerja.)</small><span style="color: red">*</span></label>
                                 <select name="jobskill" class="form-control" required>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -236,7 +236,7 @@
                         </div>
                         <div class="col-6">
                             <div class="form-group">
-                                <label>Potency(Potensi) <span style="color: red">*</span></label>
+                                <label>Potensi <small>(Memiliki kemauan dan kemampuan untuk mengelola dan mengembangkan diri.)</small><span style="color: red">*</span></label>
                                 <select name="potency" class="form-control" required>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -248,7 +248,7 @@
                         </div>
                         <div class="col-6">
                             <div class="form-group">
-                                <label>Comprehensive Thingking(Berpikir Komprehensif) <span style="color: red">*</span></label>
+                                <label>Berpikir Komprehensif <small>(Kemampuan untuk memahami secara menyeluruh terhadap pekerjaan.)</small><span style="color: red">*</span></label>
                                 <select name="comprehensive_thingking" class="form-control" required>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -266,7 +266,7 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="form-group">
-                                <label>Cooperative(Kerjasama) <span style="color: red">*</span></label>
+                                <label>Kerjasama <small>(Kemampuan untuk membangun hubungan dengan orang lain untuk mencapai tujuan.)</small><span style="color: red">*</span></label>
                                 <select name="cooperative" class="form-control" required>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -279,7 +279,7 @@
                        
                         <div class="col-6">
                             <div class="form-group">
-                                <label>Responsibility(Tanggung Jawab) <span style="color: red">*</span></label>
+                                <label>Tanggung Jawab <small>(Kesadaran diri untuk mematuhi dan melaksanakan kebijakan dan peraturan perusahaan.)</small><span style="color: red">*</span></label>
                                 <select name="responsibility" class="form-control" required>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -291,7 +291,7 @@
                         </div>
                         <div class="col-6">
                             <div class="form-group">
-                                <label>Attitude(Sikap) <span style="color: red">*</span></label>
+                                <label>Sikap <small>(Sikap dan penampilan karyawan dihubungkan dengan Semangat kerja, Kerja keras dan Tanggung jawab.)</small><span style="color: red">*</span></label>
                                 <select name="attitude" class="form-control" required>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -303,7 +303,7 @@
                         </div>
                         <div class="col-6">
                             <div class="form-group">
-                                <label>Execution(Pelaksanaan) <span style="color: red">*</span></label>
+                                <label>Pelaksanaan <small>(Melakukan pekerjaan sesuai instruksi dari atasan.)</small><span style="color: red">*</span></label>
                                 <select name="execution" class="form-control" required>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -316,7 +316,7 @@
                         <div class="col-6">
 
                             <div class="form-group">
-                                <label>Moral & Behavior(Moral dan Perilaku) <span style="color: red">*</span></label>
+                                <label>Moral dan Perilaku <small>(Kejujuran, Integritas, Profesional dan etika.)</small><span style="color: red">*</span></label>
                                 <select name="moral_behavior" class="form-control" required>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
