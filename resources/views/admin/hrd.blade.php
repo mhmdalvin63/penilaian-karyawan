@@ -28,6 +28,7 @@
                                         <th>Nama</th>
                                         <th>Departemen</th>
                                         <th>Email</th>
+                                        <th>Password</th>
                                         <th>Opsi</th>
                                     </tr>
                                 </thead>
@@ -41,6 +42,7 @@
                                         <td>{{$item->name}}</td>
                                         <td>{{$item->departemen->departemen}}</td>
                                         <td>{{$item->email}}</td>
+                                        <td>{{$item->password}}</td>
                                         <td>
                                             <form action="/admin/delete-hrd/{{$item->id}}" method="POST" onsubmit="return confirm('Apakah anda yakin akan menghapus data ini?');">
                                                 @csrf

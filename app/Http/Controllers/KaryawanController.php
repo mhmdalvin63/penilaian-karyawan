@@ -36,7 +36,7 @@ class KaryawanController extends Controller
             'name'=>$request->name,
             'nik'=>$request->nik,
             'email'=>$request->email,
-            'password'=>Hash::make($request->password),
+            'password'=>$request->password,
          ]);
         return redirect('/admin/karyawan')->with(['success'=>'Data Berhasil Ditambah.']);
     }
@@ -53,6 +53,8 @@ class KaryawanController extends Controller
             'departemen_id'=>$request->departemen_id,
             'nik'=>$request->nik,
             'name'=>$request->name,
+            'email'=>$request->email,
+            'password'=>$request->password,
         ]);
         return redirect('/admin/karyawan')->with(['success'=>'Data Berhasil Diupdate.']);
     }

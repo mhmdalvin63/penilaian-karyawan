@@ -24,7 +24,7 @@ class HrdController extends Controller
             'name'=>$request->name,
             'email'=>$request->email,
             'role'=>'hrd',
-            'password'=>Hash::make($request->password),
+            'password'=>$request->password,
          ]);
         return redirect('/admin/hrd')->with(['success'=>'Data Berhasil Ditambah.']);
     }

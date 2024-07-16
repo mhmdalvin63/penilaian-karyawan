@@ -12,11 +12,14 @@
   <link rel="stylesheet" href="{{ asset('assets/css/style.css')}}">
   <link rel="stylesheet" href="{{ asset('assets/css/components.css')}}">
 
+  <style>
+  </style>
+
 <!-- /END GA --></head>
 <body>
   <div id="app">
     <div class="main-wrapper main-wrapper-1">
-      <div class="navbar-bg"></div>
+      <div class="navbar-bg" style=" background-color: #63ed7a !important;"></div>
      @include('admin.navbar')
       
       @include('admin.sidebar')

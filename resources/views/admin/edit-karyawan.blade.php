@@ -19,10 +19,10 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label>Jabatan <span style="color: red">*</span></label>
-                        <select name="potency" class="form-control" required>
-                            @foreach ($jabatan as $item)
-                            <option value="{{$item->id}}" {{$data->jabatan_id == $item->id ? 'selected' : ''}}>{{$item->jabatan}}</option>
+                        <label>departemen <span style="color: red">*</span></label>
+                        <select name="departemen_id" class="form-control" required>
+                            @foreach ($departemen as $item)
+                            <option value="{{$item->id}}" {{$data->departemen_id == $item->id ? 'selected' : ''}}>{{$item->departemen}}</option>
                             @endforeach
                         </select>
                     </div>
@@ -33,6 +33,14 @@
                     <div class="form-group">
                         <label>Name</label>
                         <input type="text" class="form-control" required value="{{ $data->name }}" name="name">
+                    </div>
+                    <div class="form-group">
+                        <label>email</label>
+                        <input type="text" class="form-control" required value="{{ $data->email }}" name="email">
+                    </div>
+                    <div class="form-group">
+                        <label>password</label>
+                        <input type="text" class="form-control" required value="{{ $data->password }}" name="password">
                     </div>
                 </div>
                 <div class="card-footer text-right">
