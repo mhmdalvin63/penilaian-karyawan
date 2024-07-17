@@ -11,11 +11,13 @@ class PenilaianController extends Controller
 {
     public function index(){
         $auth = Auth::user();
-        $data = Penilaian::with('user')
-        ->whereHas('user', function ($query) use ($auth) {
-            $query->where('role', 'karyawan')->where('departemen_id',$auth->departemen_id);
-        })
-        ->get();
+        $query = Penilaian::with('user.departemen');
+        if ($auth->role == 'kabag') {
+            $query->whereHas('user', function ($query) use ($auth) {
+                $query->where('role', 'karyawan')->where('departemen_id',$auth->departemen_id);
+            });
+        }
+        $data = $query->get();
         if ($auth->role == 'kabag') {
             $user = User::where('role','karyawan')->where('departemen_id',$auth->departemen_id)->get();
             # code...
@@ -71,8 +73,16 @@ class PenilaianController extends Controller
     }
 
     public function edit($id){
+        $auth = Auth::user();
+
         $data = Penilaian::find($id);
-        $user = User::where('role','karyawan')->get();
+        if ($auth->role == 'kabag') {
+            $user = User::where('role','karyawan')->where('departemen_id',$auth->departemen_id)->get();
+            # code...
+        } else {
+            $user = User::where('role','karyawan')->get();
+            # code...
+        }
         return view('hrd.edit-penilaian-karyawan',compact('data','user'));
     }
 

@@ -39,47 +39,49 @@ class LoginRequest extends FormRequest
      * @throws \Illuminate\Validation\ValidationException
      */
 
-     public function authenticate(): void
-{
-    // Pastikan tidak melebihi batas rate limit
-    $this->ensureIsNotRateLimited();
+     // GAUSAH PAKE INI AJG !!!!!
 
-    // Ambil user berdasarkan email
-    $user = User::where('email', $this->input('email'))->first();
+//      public function authenticate(): void
+// {
+//     // Pastikan tidak melebihi batas rate limit
+//     $this->ensureIsNotRateLimited();
 
-    // Periksa apakah user ada dan kata sandi cocok
-    if (!$user || $user->password !== $this->input('password')) {
-        // Tambahkan hit pada rate limiter
-        RateLimiter::hit($this->throttleKey());
+//     // Ambil user berdasarkan email
+//     $user = User::where('email', $this->input('email'))->first();
 
-        // Lempar pengecualian validasi dengan pesan gagal
-        throw ValidationException::withMessages([
-            'email' => trans('auth.failed'),
-        ]);
+//     // Periksa apakah user ada dan kata sandi cocok
+//     if (!$user || $user->password !== $this->input('password')) {
+//         // Tambahkan hit pada rate limiter
+//         RateLimiter::hit($this->throttleKey());
+
+//         // Lempar pengecualian validasi dengan pesan gagal
+//         throw ValidationException::withMessages([
+//             'email' => trans('auth.failed'),
+//         ]);
+//     }
+
+//     // Bersihkan rate limiter jika autentikasi berhasil
+//     RateLimiter::clear($this->throttleKey());
+
+//     // Autentikasi user secara manual
+//     Auth::login($user, $this->boolean('remember'));
+// }
+
+
+    public function authenticate(): void
+    {
+        $this->ensureIsNotRateLimited();
+
+        if (! Auth::attempt($this->only('email', 'password'), $this->boolean('remember'))) {
+            RateLimiter::hit($this->throttleKey());
+
+            throw ValidationException::withMessages([
+                'email' => trans('auth.failed'),
+            ]);
+        }
+
+        RateLimiter::clear($this->throttleKey());
     }
-
-    // Bersihkan rate limiter jika autentikasi berhasil
-    RateLimiter::clear($this->throttleKey());
-
-    // Autentikasi user secara manual
-    Auth::login($user, $this->boolean('remember'));
-}
-
-
-    // public function authenticate(): void
-    // {
-    //     $this->ensureIsNotRateLimited();
-
-    //     if (! Auth::attempt($this->only('email', 'password'), $this->boolean('remember'))) {
-    //         RateLimiter::hit($this->throttleKey());
-
-    //         throw ValidationException::withMessages([
-    //             'email' => trans('auth.failed'),
-    //         ]);
-    //     }
-
-    //     RateLimiter::clear($this->throttleKey());
-    // }
 
     /**
      * Ensure the login request is not rate limited.

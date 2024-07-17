@@ -45,7 +45,6 @@
                                         <th>Nama</th>
                                         <th>Nik</th>
                                         <th>Email</th>
-                                        <th>Password</th>
                                         <th>Opsi</th>
                                     </tr>
                                 </thead>
@@ -73,7 +72,6 @@
                                         <td>{{$item->name}}</td>
                                         <td>{{$item->nik}}</td>
                                         <td>{{$item->email}}</td>
-                                        <td>{{$item->password}}</td>
                                         <td>
                                             <form action="/hrd/delete-karyawan/{{$item->id}}" method="POST" onsubmit="return confirm('Apakah anda yakin akan menghapus data ini?');">
                                                 @csrf

@@ -50,13 +50,13 @@
                                         <td>
 
                                             @if ($item->nilai_akhir > 4.1)
-                                            <span class="btn btn-success">Sempurna</span>
+                                            <span class="btn btn-outline-success">Sempurna</span>
                                             @elseif(($item->nilai_akhir > 3.1))
-                                            <span class="btn btn-primary">Baik</span>
+                                            <span class="btn btn-outline-primary">Baik</span>
                                             @elseif(($item->nilai_akhir > 2.1))
-                                            <span class="btn btn-warning">Kurang</span>
+                                            <span class="btn btn-outline-warning">Kurang</span>
                                             @else
-                                            <span class="btn btn-danger">Buruk</span>
+                                            <span class="btn btn-outline-danger">Buruk</span>
                                             
                                             @endif
                                         </td>

@@ -26,6 +26,7 @@ class AuthenticatedSessionController extends Controller
      */
     public function store(LoginRequest $request): RedirectResponse
     {
+        dd($request);
         $user = User::where('email',$request->email)->first();
         if ($user != null) {
             # code...
@@ -37,7 +38,7 @@ class AuthenticatedSessionController extends Controller
                 return redirect('/')->with(['success'=>'Login Berhasil']);
             }
         }
-            return back()->with(['pesan' => 'Email dan Password Salah.']);            
+            return back()->with(['error' => 'Email dan Password Salah.']);            
 
     }
 
