@@ -11,42 +11,42 @@ use Illuminate\Support\Facades\Auth;
 class DepartemenController extends Controller
 {
     public function index(){
-        if (Auth::user()->role != 'admin') {
+        if (Auth::user()->role != 'hrd') {
             return back();
         }
         $data = Departemen::all();
         
-        return view('admin.departemen',compact('data'));
+        return view('hrd.departemen',compact('data'));
     }
     public function submit(Request $request){
          Departemen::create([
             'departemen'=>$request->departemen,
          ]);
-        return redirect('/admin/departemen')->with(['success'=>'Data Berhasil Ditambah.']);
+        return redirect('/hrd/departemen')->with(['success'=>'Data Berhasil Ditambah.']);
     }
     public function edit($id){
-        if (Auth::user()->role != 'admin') {
+        if (Auth::user()->role != 'hrd') {
             return back();
         }
         $data = Departemen::find($id);
-        return view('admin.edit-departemen',compact('data'));
+        return view('hrd.edit-departemen',compact('data'));
     }
     public function update(Request $request, $id){
         $data = Departemen::find($id);
         $data->update([
             'departemen'=>$request->departemen,
         ]);
-        return redirect('/admin/departemen')->with(['success'=>'Data Berhasil Diupdate.']);
+        return redirect('/hrd/departemen')->with(['success'=>'Data Berhasil Diupdate.']);
     }
     public function delete($id){
         $data = Departemen::find($id);
         $data->delete();
-        return redirect('/admin/departemen')->with(['success'=>'Data Berhasil Dihapus.']);
+        return redirect('/hrd/departemen')->with(['success'=>'Data Berhasil Dihapus.']);
     }
 
     public function dep(){
         $user = Auth::user();
-        if ($user->role == 'admin' || $user->role == 'hrd') {
+        if ($user->role == 'hrd' || $user->role == 'kabag') {
             Auth::logout();
             return redirect('/');
         }

@@ -1,4 +1,4 @@
-@extends('admin.layout')
+@extends('hrd.layout')
 @section('content')
 <div class="section-body">
     <div class="container-fluid">
@@ -6,7 +6,7 @@
             <div class="card-header">
                 <h4>Edit Data Karyawan</h4>
             </div>
-            <form action="/admin/update-karyawan/{{$data->id}}" method="post" enctype="multipart/form-data">
+            <form action="/hrd/update-karyawan/{{$data->id}}" method="post" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                 <div class="card-body">
@@ -19,10 +19,10 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label>Jabatan <span style="color: red">*</span></label>
-                        <select name="potency" class="form-control" required>
-                            @foreach ($jabatan as $item)
-                            <option value="{{$item->id}}" {{$data->jabatan_id == $item->id ? 'selected' : ''}}>{{$item->jabatan}}</option>
+                        <label>Departemen <span style="color: red">*</span></label>
+                        <select name="departemen_id" name="departemen_id" class="form-control" required>
+                            @foreach ($departemen as $item)
+                            <option value="{{$item->id}}" {{$data->departemen_id == $item->id ? 'selected' : ''}}>{{$item->departemen}}</option>
                             @endforeach
                         </select>
                     </div>

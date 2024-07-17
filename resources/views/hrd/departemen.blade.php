@@ -1,4 +1,4 @@
-@extends('admin.layout')
+@extends('hrd.layout')
 @section('content')
 <div class="section-body">
     <div class="row">
@@ -38,10 +38,10 @@
                                         <th scope="row">{{$no++}}</th>
                                         <td>{{$item->departemen}}</td>
                                         <td>
-                                            <form action="/admin/delete-departemen/{{$item->id}}" method="POST" onsubmit="return confirm('Apakah anda yakin akan menghapus data ini?');">
+                                            <form action="/hrd/delete-departemen/{{$item->id}}" method="POST" onsubmit="return confirm('Apakah anda yakin akan menghapus data ini?');">
                                                 @csrf
                                                 @method('delete')
-                                                <span><a class="btn btn-primary" href="/admin/edit-departemen/{{$item->id}}"><i class="far fa-edit"></i>Edit</a></span>
+                                                <span><a class="btn btn-primary" href="/hrd/edit-departemen/{{$item->id}}"><i class="far fa-edit"></i>Edit</a></span>
                                                 <button class="btn btn-danger" type="submit"><i class="far fa-trash-alt"></i> Hapus</button>
                                             </form>
                                         </td>
@@ -67,7 +67,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="/admin/submit-departemen" method="post" enctype="multipart/form-data">
+            <form action="/hrd/submit-departemen" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="modal-body">
                     <div class="form-group">

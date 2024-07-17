@@ -1,4 +1,4 @@
-@extends('admin.layout')
+@extends('hrd.layout')
 @section('content')
 <div class="section-body">
     <div class="row">
@@ -6,11 +6,9 @@
             <div class="card">
                 <div class="card-header">
                     <h4 class="w-100">List Penilaian Karyawan</h4>
-                    @if (Auth::user()->role == 'admin')
                         <button type="button" class="btn btn-success" data-toggle="modal" data-target="#kategoriprodukmodal">
                             <span class="text">+ Tambah</span>
                         </button>
-                    @endif
                 </div>
                 <div class="card-body">
                     @if (session('success'))
@@ -63,10 +61,10 @@
                                             @endif
                                         </td>
                                         <td>
-                                            <form action="/admin/delete-penilaian/{{$item->id}}" method="POST" onsubmit="return confirm('Apakah anda yakin akan menghapus data ini?');">
+                                            <form action="/hrd/delete-penilaian/{{$item->id}}" method="POST" onsubmit="return confirm('Apakah anda yakin akan menghapus data ini?');">
                                                 @csrf
                                                 @method('delete')
-                                                <span><a class="btn btn-primary" href="/admin/edit-penilaian/{{$item->id}}"><i class="far fa-edit"></i>Edit</a></span>
+                                                <span><a class="btn btn-primary" href="/hrd/edit-penilaian/{{$item->id}}"><i class="far fa-edit"></i>Edit</a></span>
                                                 <button class="btn btn-danger" type="submit"><i class="far fa-trash-alt"></i> Hapus</button>
                                             </form>
                                         </td>
@@ -94,7 +92,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="/admin/submit-penilaian" method="post" enctype="multipart/form-data">
+            <form action="/hrd/submit-penilaian" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="modal-body">
                     <div class="row">
@@ -314,7 +312,6 @@
                             </div>
                         </div>
                         <div class="col-6">
-
                             <div class="form-group">
                                 <label>Moral dan Perilaku <small>(Kejujuran, Integritas, Profesional dan etika.)</small><span style="color: red">*</span></label>
                                 <select name="moral_behavior" class="form-control" required>

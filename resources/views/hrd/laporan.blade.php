@@ -1,4 +1,4 @@
-@extends('admin.layout')
+@extends('hrd.layout')
 @section('content')
 <div class="section-body">
     <div class="row">
@@ -9,7 +9,7 @@
                     
                 </div>
                 <div class="card-body">
-                    <form action="/admin/export" method="post">
+                    <form action="/hrd/export" method="post">
                         @csrf
                         <div class="menus" style="display: flex; justify-content: start; gap: 1rem; align-items: center">
                             <div class="form-group">

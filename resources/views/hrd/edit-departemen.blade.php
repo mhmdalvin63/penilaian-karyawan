@@ -1,4 +1,4 @@
-@extends('admin.layout')
+@extends('hrd.layout')
 @section('content')
 <div class="section-body">
     <div class="container-fluid">
@@ -6,7 +6,7 @@
             <div class="card-header">
                 <h4>Edit Data Departemen</h4>
             </div>
-            <form action="/admin/update-departemen/{{$data->id}}" method="post" enctype="multipart/form-data">
+            <form action="/hrd/update-departemen/{{$data->id}}" method="post" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                 <div class="card-body">

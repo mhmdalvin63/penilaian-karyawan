@@ -9,35 +9,35 @@ use Illuminate\Support\Facades\Auth;
 class JabatanController extends Controller
 {
     public function index(){
-        if (Auth::user()->role != 'admin') {
+        if (Auth::user()->role != 'hrd') {
             return back();
         }
         $data = Jabatan::all();
-        return view('admin.jabatan',compact('data'));
+        return view('hrd.jabatan',compact('data'));
     }
     public function submit(Request $request){
          Jabatan::create([
             'jabatan'=>$request->jabatan,
          ]);
-        return redirect('/admin/jabatan')->with(['success'=>'Data Berhasil Ditambah.']);
+        return redirect('/hrd/jabatan')->with(['success'=>'Data Berhasil Ditambah.']);
     }
     public function edit($id){
-        if (Auth::user()->role != 'admin') {
+        if (Auth::user()->role != 'hrd') {
             return back();
         }
         $data = Jabatan::find($id);
-        return view('admin.edit-jabatan',compact('data'));
+        return view('hrd.edit-jabatan',compact('data'));
     }
     public function update(Request $request, $id){
         $data = Jabatan::find($id);
         $data->update([
             'jabatan'=>$request->jabatan,
         ]);
-        return redirect('/admin/jabatan')->with(['success'=>'Data Berhasil Diupdate.']);
+        return redirect('/hrd/jabatan')->with(['success'=>'Data Berhasil Diupdate.']);
     }
     public function delete($id){
         $data = Jabatan::find($id);
         $data->delete();
-        return redirect('/admin/jabatan')->with(['success'=>'Data Berhasil Dihapus.']);
+        return redirect('/hrd/jabatan')->with(['success'=>'Data Berhasil Dihapus.']);
     }
 }

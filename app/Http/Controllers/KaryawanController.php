@@ -14,7 +14,7 @@ class KaryawanController extends Controller
 {
     public function index(){
         $user = Auth::user();
-        if ($user->role == 'admin') {
+        if ($user->role == 'hrd') {
             $data = User::with('jabatan','departemen')->where('role','karyawan')->get();
         } else {
             $data = User::with('jabatan','departemen')->where('role','karyawan')->where('departemen_id',$user->departemen_id)->get();
@@ -23,7 +23,7 @@ class KaryawanController extends Controller
         
         $jabatan = Jabatan::all();
         $departemen = Departemen::all();
-        return view('admin.karyawan',compact('data','jabatan','departemen'));
+        return view('hrd.karyawan',compact('data','jabatan','departemen'));
     }
     public function submit(Request $request){
         $user = User::where('email',$request->email)->first();
@@ -38,13 +38,13 @@ class KaryawanController extends Controller
             'email'=>$request->email,
             'password'=>Hash::make($request->password),
          ]);
-        return redirect('/admin/karyawan')->with(['success'=>'Data Berhasil Ditambah.']);
+        return redirect('/hrd/karyawan')->with(['success'=>'Data Berhasil Ditambah.']);
     }
     public function edit($id){
         $data = User::find($id);
         $jabatan = Jabatan::all();
         $departemen = Departemen::all();
-        return view('admin.edit-karyawan',compact('data','jabatan','departemen'));
+        return view('hrd.edit-karyawan',compact('data','jabatan','departemen'));
     }
     public function update(Request $request, $id){
         $data = User::find($id);
@@ -54,13 +54,13 @@ class KaryawanController extends Controller
             'nik'=>$request->nik,
             'name'=>$request->name,
         ]);
-        return redirect('/admin/karyawan')->with(['success'=>'Data Berhasil Diupdate.']);
+        return redirect('/hrd/karyawan')->with(['success'=>'Data Berhasil Diupdate.']);
     }
     public function delete($id){
         $data = User::find($id);
         $penilaian = Penilaian::where('user_id',$id)->get();
         $penilaian->each->delete();
         $data->delete();
-        return redirect('/admin/karyawan')->with(['success'=>'Data Berhasil Dihapus.']);
+        return redirect('/hrd/karyawan')->with(['success'=>'Data Berhasil Dihapus.']);
     }
 }

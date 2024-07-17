@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>Login HRD</title>
     <link rel="stylesheet" href="{{asset('../frontEnd/css/global.css')}}"> 
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -46,7 +46,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                   </div>
                 @endif
-                <form action="/admin/submit-login" method="POST">
+                <form action="/hrd/submit-login" method="POST">
                     @csrf 
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label ps-3">Email</label>

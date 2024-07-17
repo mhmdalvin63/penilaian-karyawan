@@ -5,8 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Hrd extends Model
+class Kabag extends Model
 {
     use HasFactory;
-    protected $guarded=[''];
 }

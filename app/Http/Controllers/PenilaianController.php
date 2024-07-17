@@ -5,17 +5,26 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Penilaian;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PenilaianController extends Controller
 {
     public function index(){
+        $auth = Auth::user();
         $data = Penilaian::with('user')
-                ->whereHas('user', function ($query) {
-                    $query->where('role', 'karyawan');
-                })
-                ->get();
-                $user = User::where('role','karyawan')->get();
-        return view('admin.penilaian-karyawan',compact('data','user'));
+        ->whereHas('user', function ($query) use ($auth) {
+            $query->where('role', 'karyawan')->where('departemen_id',$auth->departemen_id);
+        })
+        ->get();
+        if ($auth->role == 'kabag') {
+            $user = User::where('role','karyawan')->where('departemen_id',$auth->departemen_id)->get();
+            # code...
+        } else {
+            $user = User::where('role','karyawan')->get();
+            # code...
+        }
+                
+        return view('hrd.penilaian-karyawan',compact('data','user'));
     }
 
     public function submit(Request $request){
@@ -58,13 +67,13 @@ class PenilaianController extends Controller
             'nilai_akhir'=>$total,
         ]);
 
-        return redirect('/admin/penilaian-karyawan')->with(['success'=>'Data berhasil Ditambah.']);
+        return redirect('/hrd/penilaian-karyawan')->with(['success'=>'Data berhasil Ditambah.']);
     }
 
     public function edit($id){
         $data = Penilaian::find($id);
         $user = User::where('role','karyawan')->get();
-        return view('admin.edit-penilaian-karyawan',compact('data','user'));
+        return view('hrd.edit-penilaian-karyawan',compact('data','user'));
     }
 
     public function update(Request $request, $id){
@@ -105,32 +114,41 @@ class PenilaianController extends Controller
             'moral_behavior'=>$request->moral_behavior,
             'nilai_akhir'=>$total,
         ]);
-        return redirect('/admin/penilaian-karyawan')->with(['success'=>'Data berhasil Diupdate.']);
+        return redirect('/hrd/penilaian-karyawan')->with(['success'=>'Data berhasil Diupdate.']);
     }
 
     public function delete($id){
         $data = Penilaian::find($id);
         $data->delete();
-        return redirect('/admin/penilaian-karyawan')->with(['success'=>'Data berhasil Dihapus.']);
+        return redirect('/hrd/penilaian-karyawan')->with(['success'=>'Data berhasil Dihapus.']);
     }
 
     public function laporan(){
-        $data = Penilaian::with('user')
-                ->whereHas('user', function ($query) {
-                    $query->where('role', 'karyawan');
-                })
-                ->get();
-        return view('admin.laporan',compact('data'));
+        $auth = Auth::user();
+        $query = Penilaian::with('user.departemen');
+        if ($auth->role == 'kabag') {
+            $query->whereHas('user', function ($query) use ($auth) {
+                $query->where('departemen_id',$auth->departemen_id);
+            });
+        }
+        $data = $query->get();
+                
+        return view('hrd.laporan',compact('data'));
     }
 
     public function download(Request $request){
         $filename = "laporan_penilaian_".date('Y-m-d').".xls";		 
       header("Content-Type: application/vnd.ms-excel");
       header("Content-Disposition: attachment; filename=\"$filename\"");
-
-    $data = Penilaian::with('user.departemen')
-    ->whereDate('to_date', '<=', $request->to_date)
-    ->get();
+      $auth = Auth::user();
+    $query = Penilaian::with('user.departemen');
+    if ($auth->role == 'kabag') {
+        $query->whereHas('user', function ($query) use ($auth) {
+            $query->where('departemen_id',$auth->departemen_id);
+        });
+    }
+    $query->whereDate('to_date', '<=', $request->to_date);
+    $data = $query->get();
         foreach ($data as $key) {
             if ($key->nilai_akhir > 4.1) {
                 $key->status_nilai = 'Sempurna';

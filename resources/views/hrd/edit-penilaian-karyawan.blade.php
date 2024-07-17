@@ -1,4 +1,4 @@
-@extends('admin.layout')
+@extends('hrd.layout')
 @section('content')
 <div class="section-body">
     <div class="row">
@@ -11,7 +11,7 @@
                     </button>
                 </div>
                 <div class="card-body">
-                    <form action="/admin/update-penilaian/{{$data->id}}" method="post" enctype="multipart/form-data">
+                    <form action="/hrd/update-penilaian/{{$data->id}}" method="post" enctype="multipart/form-data">
                         @csrf
                         @method('put')
                         <div class="modal-body">

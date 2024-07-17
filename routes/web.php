@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\KabagController;
 use App\Http\Controllers\HrdController;
-use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\JabatanController;
 use App\Http\Controllers\ProfileController;
@@ -37,23 +37,22 @@ Route::middleware(['auth'])->group(function () {
 
 });
 
-Route::get('/admin/login', [AdminController::class,'login']);
-Route::post('/admin/submit-login', [AdminController::class,'submit_login']);
-Route::get('/admin/registrasi', [AdminController::class,'register_admin']);
+Route::get('/hrd/login', [HrdController::class,'login']);
+Route::post('/hrd/submit-login', [HrdController::class,'submit_login']);
 
-Route::middleware(['auth','admin'])->group(function () {
-    Route::prefix('admin')->group(function () {
+Route::middleware(['auth','hrd'])->group(function () {
+    Route::prefix('hrd')->group(function () {
         Route::get('/karyawan', [KaryawanController::class, 'index']);
         Route::post('/submit-karyawan', [KaryawanController::class, 'submit']);
         Route::get('/edit-karyawan/{id}', [KaryawanController::class, 'edit']);
         Route::put('/update-karyawan/{id}', [KaryawanController::class, 'update']);
         Route::delete('/delete-karyawan/{id}', [KaryawanController::class, 'delete']);
         
-        Route::get('/hrd', [HrdController::class, 'index']);
-        Route::post('/submit-hrd', [HrdController::class, 'submit']);
-        Route::get('/edit-hrd/{id}', [HrdController::class, 'edit']);
-        Route::put('/update-hrd/{id}', [HrdController::class, 'update']);
-        Route::delete('/delete-hrd/{id}', [HrdController::class, 'delete']);
+        Route::get('/kabag', [KabagController::class, 'index']);
+        Route::post('/submit-kabag', [KabagController::class, 'submit']);
+        Route::get('/edit-kabag/{id}', [KabagController::class, 'edit']);
+        Route::put('/update-kabag/{id}', [KabagController::class, 'update']);
+        Route::delete('/delete-kabag/{id}', [KabagController::class, 'delete']);
         
         Route::get('/jabatan', [JabatanController::class, 'index']);
         Route::post('/submit-jabatan', [JabatanController::class, 'submit']);

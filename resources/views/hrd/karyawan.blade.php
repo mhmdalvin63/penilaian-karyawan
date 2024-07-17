@@ -1,4 +1,4 @@
-@extends('admin.layout')
+@extends('hrd.layout')
 @section('content')
 <div class="section-body">
     <div class="row">
@@ -6,7 +6,7 @@
             <div class="card">
                 <div class="card-header">
                     <h4 class="w-100">List Karyawan</h4>
-                    @if (Auth::user()->role == 'admin')
+                    @if (Auth::user()->role == 'hrd')
                         <button type="button" class="btn btn-success" data-toggle="modal" data-target="#kategoriprodukmodal">
                             <span class="text">+ Tambah</span>
                         </button>
@@ -73,10 +73,10 @@
                                         <td>{{$item->nik}}</td>
                                         <td>{{$item->email}}</td>
                                         <td>
-                                            <form action="/admin/delete-karyawan/{{$item->id}}" method="POST" onsubmit="return confirm('Apakah anda yakin akan menghapus data ini?');">
+                                            <form action="/hrd/delete-karyawan/{{$item->id}}" method="POST" onsubmit="return confirm('Apakah anda yakin akan menghapus data ini?');">
                                                 @csrf
                                                 @method('delete')
-                                                <span><a class="btn btn-primary" href="/admin/edit-karyawan/{{$item->id}}"><i class="far fa-edit"></i>Edit</a></span>
+                                                <span><a class="btn btn-primary" href="/hrd/edit-karyawan/{{$item->id}}"><i class="far fa-edit"></i>Edit</a></span>
                                                 <button class="btn btn-danger" type="submit"><i class="far fa-trash-alt"></i> Hapus</button>
                                             </form>
                                         </td>
@@ -104,7 +104,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="/admin/submit-karyawan" method="post" enctype="multipart/form-data">
+            <form action="/hrd/submit-karyawan" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="modal-body">
                     <div class="form-group">
