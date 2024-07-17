@@ -68,70 +68,90 @@
                                 @endif
                             </div>
                             <hr>
-                            <div class="d-flex align-items-center gap-3 my-2">
+                            <div class="d-flex align-items-center gap-3 my-3">
                                 <p class="fw-bold">Kehadiran :</p>
                                 <p>{{ $penilaian->kehadiran }}</p>
                             </div>
-                            <div class="d-flex align-items-center gap-3 my-2">
+                            <p class="desc-penilaian">Presensi menunjukkan kepatuhan karyawan pada peraturan perusahaan mengenai waktu kerja.                            </p>
+                            <div class="d-flex align-items-center gap-3 my-3">
                                 <p class="fw-bold">Quality :</p>
                                 <p>{{ $penilaian->quality }}</p>
                             </div>
-                            <div class="d-flex align-items-center gap-3 my-2">
+                            <p class="desc-penilaian">Kemampuan untuk menyelesaikan suatu pekerjaan berdasarkan ketelitian, kerapihan dan kesesuaian hasil kerja.</p>
+                            <div class="d-flex align-items-center gap-3 my-3">
                                 <p class="fw-bold">Speed :</p>
                                 <p>{{ $penilaian->speed }}</p>
                             </div>
-                            <div class="d-flex align-items-center gap-3 my-2">
+                             <p class="desc-penilaian">Kemampuan menyelesaikan pekerjaan sesuai dengan waktu yang telah ditetapkan dengan cepat dan efisien.
+                             </p>
+                            <div class="d-flex align-items-center gap-3 my-3">
                                 <p class="fw-bold">Achievment :</p>
                                 <p>{{ $penilaian->achievment }}</p>
                             </div>
-                            <div class="d-flex align-items-center gap-3 my-2">
+                             <p class="desc-penilaian">Kemampuan melakukan pekerjaan dengan sebaik mungkin untuk melampaui standar keberhasilan kerjanya.</p>
+                            <div class="d-flex align-items-center gap-3 my-3">
                                 <p class="fw-bold">Planning :</p>
                                 <p>{{ $penilaian->planning }}</p>
                             </div>
-                            <div class="d-flex align-items-center gap-3 my-2">
+                             <p class="desc-penilaian">Kemampuan untuk menyusun prioritas perencanaan dan mengkoordinasi pekerjaan</p>
+                            <div class="d-flex align-items-center gap-3 my-3">
                                 <p class="fw-bold">Flexibility :</p>
                                 <p>{{ $penilaian->flexibility }}</p>
                             </div>
-                            <div class="d-flex align-items-center gap-3 my-2">
+                             <p class="desc-penilaian">Kemampuan untuk menyesuaikan diri dan bekerja dengan efektif pada berbagai situasi dan permasalahan.</p>
+                            <div class="d-flex align-items-center gap-3 my-3">
                                 <p class="fw-bold">Inovation :</p>
                                 <p>{{ $penilaian->inovasion }}</p>
                             </div>
-                            <div class="d-flex align-items-center gap-3 my-2">
+                             <p class="desc-penilaian">Kemampuan untuk memunculkan ide baru yang dapat dipergunakan untuk mempermudah pekerjaan.</p>
+                            <div class="d-flex align-items-center gap-3 my-3">
                                 <p class="fw-bold">Jobskill :</p>
                                 <p>{{ $penilaian->jobskill }}</p>
                             </div>
-                            <div class="d-flex align-items-center gap-3 my-2">
+                             <p class="desc-penilaian">Memiliki pengetahuan yang mendalam tentang pekerjaan dan mengetahui bagaimana cara kerja.</p>
+                            <div class="d-flex align-items-center gap-3 my-3">
                                 <p class="fw-bold">Coopertative :</p>
                                 <p>{{ $penilaian->coopertative }}</p>
                             </div>
-                            <div class="d-flex align-items-center gap-3 my-2">
+                             <p class="desc-penilaian">Kemampuan untuk membangun hubungan dengan orang lain untuk mencapai tujuan.</p>
+                            <div class="d-flex align-items-center gap-3 my-3">
                                 <p class="fw-bold">Responsibility :</p>
                                 <p>{{ $penilaian->responsibility }}</p>
                             </div>
-                            <div class="d-flex align-items-center gap-3 my-2">
+                             <p class="desc-penilaian">Kesadaran diri untuk mematuhi dan melaksanakan kebijakan dan peraturan perusahaan.</p>
+                            <div class="d-flex align-items-center gap-3 my-3">
                                 <p class="fw-bold">Atitude :</p>
                                 <p>{{ $penilaian->atitude }}</p>
                             </div>
-                            <div class="d-flex align-items-center gap-3 my-2">
+                             <p class="desc-penilaian">Sikap dan penampilan karyawan dihubungkan dengan Semangat kerja, Kerja keras dan Tanggung jawab.</p>
+                            <div class="d-flex align-items-center gap-3 my-3">
                                 <p class="fw-bold">Execution :</p>
                                 <p>{{ $penilaian->execution }}</p>
                             </div>
-                            <div class="d-flex align-items-center gap-3 my-2">
+                             <p class="desc-penilaian">Melakukan pekerjaan sesuai instruksi dari atasan.
+                             </p>
+                            <div class="d-flex align-items-center gap-3 my-3">
                                 <p class="fw-bold">Moral Behavior :</p>
                                 <p>{{ $penilaian->moral_behavior }}</p>
                             </div>
-                            <div class="d-flex align-items-center gap-3 my-2">
+                             <p class="desc-penilaian">Kejujuran, Integritas, Profesional dan etika.
+                             </p>
+                            <div class="d-flex align-items-center gap-3 my-3">
                                 <p class="fw-bold">Workload :</p>
                                 <p>{{ $penilaian->workload }}</p>
                             </div>
-                            <div class="d-flex align-items-center gap-3 my-2">
+                             <p class="desc-penilaian">Kemampuan menyelesaikan pekerjaan telah ditentukan sesuai dengan tanggungjawab pekerjaannya.</p>
+                            <div class="d-flex align-items-center gap-3 my-3">
                                 <p class="fw-bold">Potency :</p>
                                 <p>{{ $penilaian->potency }}</p>
                             </div>
-                            <div class="d-flex align-items-center gap-3 my-2">
+                             <p class="desc-penilaian">Memiliki kemauan dan kemampuan untuk mengelola dan mengembangkan diri.
+                             </p>
+                            <div class="d-flex align-items-center gap-3 my-3">
                                 <p class="fw-bold">Comprehensive thingking :</p>
                                 <p>{{ $penilaian->comprehensive_thingking }}</p>
                             </div>
+                             <p class="desc-penilaian">Kemampuan untuk memahami secara menyeluruh terhadap pekerjaan.</p>
                         </div>
                     </div>
                     <div class="col-5 text-center">

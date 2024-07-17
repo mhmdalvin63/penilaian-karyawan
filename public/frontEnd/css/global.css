@@ -60,6 +60,13 @@ h5{
     box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 
+
+.desc-penilaian{
+    margin-top: -.75rem;
+    padding-left: 1rem;
+    font-size: .75rem;
+}
+
 /* CSS NAVBAR */
 .nav-active{
     background-color: #059212;
