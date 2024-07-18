@@ -24,7 +24,7 @@ class KabagController extends Controller
             'name'=>$request->name,
             'email'=>$request->email,
             'role'=>'kabag',
-            'password'=>Hash::make($request->password),
+            'password'=>$request->password,
          ]);
         return redirect('/hrd/kabag')->with(['success'=>'Data Berhasil Ditambah.']);
     }

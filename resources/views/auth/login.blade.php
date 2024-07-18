@@ -32,10 +32,11 @@
                           <label for="exampleInputEmail1" class="form-label lt-5 text-white ps-3">Email</label>
                           <input type="email" name="email" class="form-control form-log-reg" id="exampleInputEmail1" aria-describedby="emailHelp">
                         </div>
-                        <div class="mb-3">
-                          <label for="exampleInputPassword1" class="form-label lt-5 text-white ps-3">Password</label>
-                          <input type="password" name="password" class="form-control form-log-reg" id="exampleInputPassword1">
-                        </div>
+                        <div class="mb-3 password-container">
+                            <label for="exampleInputPassword1" class="form-label ps-3 text-white">Password</label>
+                            <input type="password" required class="form-control form-log-reg" name="password" id="exampleInputPassword1">
+                            <i class="fas fa-eye toggle-password" id="togglePassword"></i>
+                        </div>  
                         <button class="btn-log-reg bg-green fw-bold lt-5 my-4" role="button">LOGIN</button>
                     </form>
 
@@ -47,5 +48,16 @@
             </div>
         </div>
     </div>
+
+    <script>
+        const togglePassword = document.getElementById('togglePassword');
+        const passwordInput = document.getElementById('exampleInputPassword1');
+
+        togglePassword.addEventListener('click', function () {
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+            this.classList.toggle('fa-eye-slash');
+        });
+    </script>
 
 @endsection

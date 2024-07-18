@@ -39,6 +39,7 @@ h5{
 
 
 .form-log-reg{
+    width: 100%;
     border-radius: 200px !important;
     padding: .75rem 1rem !important;
 }
@@ -52,6 +53,23 @@ h5{
     border: none !important;
     width: 100%;
 }
+.password-container {
+    position: relative;
+}
+/* .form-log-reg {
+    width: 100%;
+    padding-right: 40px;
+} */
+.toggle-password {
+    position: absolute;
+    right: 1rem;
+    top: 75%;
+    transform: translateY(-75%);
+    cursor: pointer;
+}
+
+
+
 
 .border-tabel{
     padding: 1rem;
