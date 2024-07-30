@@ -18,7 +18,7 @@ class HrdSeeder extends Seeder
             'nik' => 'hrd123',
             'email' => 'hrd@gmail.com',
             'role' => 'hrd',
-            'password' => Hash::make('hrd123'),
+            'password' => 'hrd123',
         ]);
     }
 }

@@ -185,42 +185,42 @@ class PenilaianController extends Controller
             <td colspan="5">: '.$from_date.' - '.$to_date.' / '.$current_year.'</td>
         </tr>
         <tr class="header">
-           		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" rowspan=3 height="51" align="center" valign=middle bgcolor="#CCFFCC"><b>No</b></td>
-		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" rowspan=3 align="center" valign=middle bgcolor="#CCFFCC"><b>Nama</b></td>
-		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" rowspan=3 align="center" valign=middle bgcolor="#CCFFCC"><b>NIK</b></td>
-		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" rowspan=3 align="center" valign=middle bgcolor="#CCFFCC"><b>Jabatan</b></td>
-		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 3px double #000000" rowspan=3 align="center" valign=middle bgcolor="#CCFFCC"><b>Divisi/Departemen</b></td>
-		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 3px double #000000; border-right: 1px solid #000000" colspan=4 align="center" valign=middle bgcolor="#CCFFCC"><b>Prestasi Kerja</b></td>
-		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 3px double #000000; border-right: 1px solid #000000" align="center" valign=middle bgcolor="#CCFFCC"><b>Kedisiplinan Kerja</b></td>
-		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 3px double #000000; border-right: 1px solid #000000" colspan=6 align="center" valign=middle bgcolor="#CCFFCC"><b>Kemampuan Kerja</b></td>
-		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 3px double #000000; border-right: 1px solid #000000" colspan=5 align="center" valign=middle bgcolor="#CCFFCC"><b>Sikap Kerja</b></td>
-		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" rowspan=3 align="center" valign=middle bgcolor="#FF99CC"><b>Total Point</b></td>
-		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" rowspan=3 align="center" valign=middle bgcolor="#FF99CC"><b>Grade</b></td>
+           		<td style="vertical-align: middle; border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" rowspan=3 height="51" align="center" valign=middle bgcolor="#CCFFCC"><b>No</b></td>
+		<td style="vertical-align: middle; border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" rowspan=3 align="center" valign=middle bgcolor="#CCFFCC"><b>Nama</b></td>
+		<td style="vertical-align: middle; border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" rowspan=3 align="center" valign=middle bgcolor="#CCFFCC"><b>NIK</b></td>
+		<td style="vertical-align: middle; border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" rowspan=3 align="center" valign=middle bgcolor="#CCFFCC"><b>Jabatan</b></td>
+		<td style="vertical-align: middle; border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 3px double #000000" rowspan=3 align="center" valign=middle bgcolor="#CCFFCC"><b>Divisi/Departemen</b></td>
+		<td style="vertical-align: middle; border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 3px double #000000; border-right: 1px solid #000000" colspan=4 align="center" valign=middle bgcolor="#CCFFCC"><b>Prestasi Kerja</b></td>
+		<td style="vertical-align: middle; border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 3px double #000000; border-right: 1px solid #000000" align="center" valign=middle bgcolor="#CCFFCC"><b>Kedisiplinan Kerja</b></td>
+		<td style="vertical-align: middle; border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 3px double #000000; border-right: 1px solid #000000" colspan=6 align="center" valign=middle bgcolor="#CCFFCC"><b>Kemampuan Kerja</b></td>
+		<td style="vertical-align: middle; border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 3px double #000000; border-right: 1px solid #000000" colspan=5 align="center" valign=middle bgcolor="#CCFFCC"><b>Sikap Kerja</b></td>
+		<td style="vertical-align: middle; border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" rowspan=3 align="center" valign=middle bgcolor="#FF99CC"><b>Total Point</b></td>
+		<td style="vertical-align: middle; border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" rowspan=3 align="center" valign=middle bgcolor="#FF99CC"><b>Grade</b></td>
         	</tr>
 	<tr>
-		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 3px double #000000; border-right: 1px solid #000000" colspan=4 align="center" valign=middle bgcolor="#FFFF99">NiLAI Akhir (NA)</td>
-		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 3px double #000000; border-right: 1px solid #000000" align="center" valign=middle bgcolor="#FFFF99">NiLAI Akhir (NA)</td>
-		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 3px double #000000; border-right: 1px solid #000000" colspan=6 align="center" valign=middle bgcolor="#FFFF99">NiLAI Akhir (NA)</td>
-		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 3px double #000000; border-right: 1px solid #000000" colspan=5 align="center" valign=middle bgcolor="#FFFF99">NiLAI Akhir (NA)</td>
+		<td style="vertical-align: middle; border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 3px double #000000; border-right: 1px solid #000000" colspan=4 align="center" valign=middle bgcolor="#FFFF99">NiLAI Akhir (NA)</td>
+		<td style="vertical-align: middle; border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 3px double #000000; border-right: 1px solid #000000" align="center" valign=middle bgcolor="#FFFF99">NiLAI Akhir (NA)</td>
+		<td style="vertical-align: middle; border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 3px double #000000; border-right: 1px solid #000000" colspan=6 align="center" valign=middle bgcolor="#FFFF99">NiLAI Akhir (NA)</td>
+		<td style="vertical-align: middle; border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 3px double #000000; border-right: 1px solid #000000" colspan=5 align="center" valign=middle bgcolor="#FFFF99">NiLAI Akhir (NA)</td>
         
         </tr>
         <tr>
-		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 3px double #000000; border-right: 1px solid #000000" align="center" valign=middle bgcolor="#FFFF99" sdval="1" sdnum="1033;">1</td>
-		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="center" valign=middle bgcolor="#FFFF99" sdval="2" sdnum="1033;">2</td>
-		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="center" valign=middle bgcolor="#FFFF99" sdval="3" sdnum="1033;">3</td>
-		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="center" valign=middle bgcolor="#FFFF99" sdval="4" sdnum="1033;">4</td>
-		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 3px double #000000; border-right: 1px solid #000000" align="center" valign=middle bgcolor="#FFFF99" sdval="5" sdnum="1033;">5</td>
-		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 3px double #000000; border-right: 1px solid #000000" align="center" valign=middle bgcolor="#FFFF99" sdval="6" sdnum="1033;">6</td>
-		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="center" valign=middle bgcolor="#FFFF99" sdval="7" sdnum="1033;">7</td>
-		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="center" valign=middle bgcolor="#FFFF99" sdval="8" sdnum="1033;">8</td>
-		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="center" valign=middle bgcolor="#FFFF99" sdval="9" sdnum="1033;">9</td>
-		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="center" valign=middle bgcolor="#FFFF99" sdval="10" sdnum="1033;">10</td>
-		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="center" valign=middle bgcolor="#FFFF99" sdval="11" sdnum="1033;">11</td>
-		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 3px double #000000; border-right: 1px solid #000000" align="center" valign=middle bgcolor="#FFFF99" sdval="12" sdnum="1033;">12</td>
-		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="center" valign=middle bgcolor="#FFFF99" sdval="13" sdnum="1033;">13</td>
-		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="center" valign=middle bgcolor="#FFFF99" sdval="14" sdnum="1033;">14</td>
-		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="center" valign=middle bgcolor="#FFFF99" sdval="15" sdnum="1033;">15</td>
-		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="center" valign=middle bgcolor="#FFFF99" sdval="16" sdnum="1033;">16</td>
+		<td style="vertical-align: middle; border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 3px double #000000; border-right: 1px solid #000000" align="center" valign=middle bgcolor="#FFFF99" sdval="1" sdnum="1033;">1</td>
+		<td style="vertical-align: middle; border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="center" valign=middle bgcolor="#FFFF99" sdval="2" sdnum="1033;">2</td>
+		<td style="vertical-align: middle; border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="center" valign=middle bgcolor="#FFFF99" sdval="3" sdnum="1033;">3</td>
+		<td style="vertical-align: middle; border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="center" valign=middle bgcolor="#FFFF99" sdval="4" sdnum="1033;">4</td>
+		<td style="vertical-align: middle; border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 3px double #000000; border-right: 1px solid #000000" align="center" valign=middle bgcolor="#FFFF99" sdval="5" sdnum="1033;">5</td>
+		<td style="vertical-align: middle; border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 3px double #000000; border-right: 1px solid #000000" align="center" valign=middle bgcolor="#FFFF99" sdval="6" sdnum="1033;">6</td>
+		<td style="vertical-align: middle; border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="center" valign=middle bgcolor="#FFFF99" sdval="7" sdnum="1033;">7</td>
+		<td style="vertical-align: middle; border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="center" valign=middle bgcolor="#FFFF99" sdval="8" sdnum="1033;">8</td>
+		<td style="vertical-align: middle; border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="center" valign=middle bgcolor="#FFFF99" sdval="9" sdnum="1033;">9</td>
+		<td style="vertical-align: middle; border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="center" valign=middle bgcolor="#FFFF99" sdval="10" sdnum="1033;">10</td>
+		<td style="vertical-align: middle; border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="center" valign=middle bgcolor="#FFFF99" sdval="11" sdnum="1033;">11</td>
+		<td style="vertical-align: middle; border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 3px double #000000; border-right: 1px solid #000000" align="center" valign=middle bgcolor="#FFFF99" sdval="12" sdnum="1033;">12</td>
+		<td style="vertical-align: middle; border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="center" valign=middle bgcolor="#FFFF99" sdval="13" sdnum="1033;">13</td>
+		<td style="vertical-align: middle; border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="center" valign=middle bgcolor="#FFFF99" sdval="14" sdnum="1033;">14</td>
+		<td style="vertical-align: middle; border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="center" valign=middle bgcolor="#FFFF99" sdval="15" sdnum="1033;">15</td>
+		<td style="vertical-align: middle; border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="center" valign=middle bgcolor="#FFFF99" sdval="16" sdnum="1033;">16</td>
 
        
     ';
@@ -257,7 +257,8 @@ class PenilaianController extends Controller
             }
         $dataHtml .= '</table>';
 
-        $dataHtml .= '<br><table border="1">
+        $dataHtml .= '<br>
+    <table border="1">
         <tr>
             <th></th>
             <th>Total Point</th>
@@ -333,7 +334,42 @@ class PenilaianController extends Controller
             <td>11 Berpikir Komprehensif</td>
             <td></td>
         </tr>
-    </table>';
+    </table>
+    
+    <br>';
+
+    $dataHtml .= '<table border="1">
+    <tr>
+        <th style="padding: 8px; text-align: center;"></th>
+        <th style="padding: 8px; text-align: center;">Dibuat oleh</th>
+        <th style="padding: 8px; text-align: center;">Diketahui oleh</th>
+        <th style="padding: 8px; text-align: center;">Disetujui oleh</th>
+    </tr>
+    <tr>
+        <td style="padding: 8px; text-align: center; height: 4em; vertical-align: middle;">Tanda Tangan</td>
+        <td style="padding: 8px; text-align: center; height: 4em;"></td>
+        <td style="padding: 8px; text-align: center; height: 4em;"></td>
+        <td style="padding: 8px; text-align: center; height: 4em;"></td>
+    </tr>
+    <tr>
+        <td style="padding: 8px; text-align: center;">Nama</td>
+        <td style="padding: 8px; text-align: center;"></td>
+        <td style="padding: 8px; text-align: center;"></td>
+        <td style="padding: 8px; text-align: center;"></td>
+    </tr>
+    <tr>
+        <td style="padding: 8px; text-align: center;">Jabatan</td>
+        <td style="padding: 8px; text-align: center;"></td>
+        <td style="padding: 8px; text-align: center;"></td>
+        <td style="padding: 8px; text-align: center;"></td>
+    </tr>
+    <tr>
+        <td style="padding: 8px; text-align: center;">Tanggal</td>
+        <td style="padding: 8px; text-align: center;"></td>
+        <td style="padding: 8px; text-align: center;"></td>
+        <td style="padding: 8px; text-align: center;"></td>
+    </tr>
+</table>';
         
         echo $dataHtml;
     }

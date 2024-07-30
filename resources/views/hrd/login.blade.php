@@ -34,7 +34,8 @@
 <body>
     <div class="container">
         <div class="card w-50">
-            <img class="kalender mx-auto mb-5" src="{{asset('../frontEnd/images/logo-text-pt.png')}}" alt=""> 
+            <img class="kalender mx-auto" src="{{asset('../frontEnd/images/logo-text-pt.png')}}" alt=""> 
+            <h5 class="text-center my-3">Sistem Informasi Penilaian Kerja Karyawan</h5>
             <div class="card-body">
                 @if (session('error'))
                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
